@@ -21,3 +21,14 @@ export async function fetchContactSubmissions(adminToken) {
   if (!res.ok) throw new Error(body.error || "Failed to fetch submissions");
   return body;
 }
+
+// Admin-only: deletes a single contact lead by its Mongo _id.
+export async function deleteContactSubmission(adminToken, id) {
+  const res = await fetch(`${API_URL}/api/contact/${id}`, {
+    method: "DELETE",
+    headers: { "x-admin-token": adminToken },
+  });
+  const body = await res.json();
+  if (!res.ok) throw new Error(body.error || "Failed to delete submission");
+  return body;
+}

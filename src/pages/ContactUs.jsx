@@ -121,7 +121,7 @@ export default function ContactUs() {
                   onChange={handleChange}
                   required
                   placeholder="Enter your full name"
-                  className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand"
+                  className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm hover:ring-1 hover:ring-brand hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-brand"
                 />
               </div>
               <div>
@@ -131,7 +131,7 @@ export default function ContactUs() {
                   value={form.companyName}
                   onChange={handleChange}
                   placeholder="Enter your company name"
-                  className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand"
+                  className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm hover:ring-1 hover:ring-brand hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-brand"
                 />
               </div>
               <div>
@@ -143,7 +143,7 @@ export default function ContactUs() {
                   onChange={handleChange}
                   required
                   placeholder="Enter your work email"
-                  className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand"
+                  className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm hover:ring-1 hover:ring-brand hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-brand"
                 />
               </div>
               <div>
@@ -153,7 +153,7 @@ export default function ContactUs() {
                   value={form.phoneNumber}
                   onChange={handleChange}
                   placeholder="Enter your phone number"
-                  className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand"
+                  className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm hover:ring-1 hover:ring-brand hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-brand"
                 />
               </div>
             </div>
@@ -165,7 +165,7 @@ export default function ContactUs() {
                 value={form.projectType}
                 onChange={handleChange}
                 placeholder="e.g. Partnership, Investment, Enterprise Software"
-                className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand"
+                className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm hover:ring-1 hover:ring-brand hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-brand"
               />
             </div>
 
@@ -178,7 +178,7 @@ export default function ContactUs() {
                 required
                 rows={5}
                 placeholder="For better assistance, please describe how we can help you..."
-                className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-brand resize-none"
+                className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm hover:ring-1 hover:ring-brand hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-brand resize-none"
               />
             </div>
 

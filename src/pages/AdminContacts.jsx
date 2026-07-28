@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Lock, Mail, Phone, Building2, RefreshCw } from "lucide-react";
-import { fetchContactSubmissions } from "../lib/api";
+import { Lock, Mail, Phone, Building2, RefreshCw, Download, Trash2 } from "lucide-react";
+import { fetchContactSubmissions, deleteContactSubmission } from "../lib/api";
 
 function formatDate(dateStr) {
   return new Date(dateStr).toLocaleString("en-US", {
@@ -19,6 +19,7 @@ export default function AdminContacts() {
   const [submissions, setSubmissions] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [deletingId, setDeletingId] = useState(null);
 
   const load = async (adminToken) => {
     setLoading(true);
@@ -38,6 +39,55 @@ export default function AdminContacts() {
   const handleUnlock = (e) => {
     e.preventDefault();
     load(token);
+  };
+
+  // Builds an .xlsx file from the current leads and triggers a browser download.
+  // xlsx is loaded on demand (not bundled into the main app) since it's only
+  // needed on this admin page.
+  const handleExport = async () => {
+    const XLSX = await import("xlsx");
+
+    const rows = submissions.map((s) => ({
+      "Full Name": s.fullName,
+      "Company Name": s.companyName || "",
+      "Work Email": s.workEmail,
+      "Phone Number": s.phoneNumber || "",
+      "Project Type": s.projectType || "",
+      Message: s.message,
+      Status: s.status || "new",
+      "Submitted At": formatDate(s.createdAt),
+    }));
+
+    const worksheet = XLSX.utils.json_to_sheet(rows);
+    worksheet["!cols"] = [
+      { wch: 20 }, // Full Name
+      { wch: 20 }, // Company Name
+      { wch: 26 }, // Work Email
+      { wch: 16 }, // Phone Number
+      { wch: 20 }, // Project Type
+      { wch: 50 }, // Message
+      { wch: 10 }, // Status
+      { wch: 20 }, // Submitted At
+    ];
+
+    const workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, "Contact Leads");
+
+    const dateStamp = new Date().toISOString().slice(0, 10);
+    XLSX.writeFile(workbook, `tavewo-contact-leads-${dateStamp}.xlsx`);
+  };
+
+  const handleDelete = async (id) => {
+    if (!window.confirm("Delete this lead? This can't be undone.")) return;
+    setDeletingId(id);
+    try {
+      await deleteContactSubmission(token, id);
+      setSubmissions((prev) => prev.filter((s) => s._id !== id));
+    } catch (err) {
+      alert(err.message || "Failed to delete this lead.");
+    } finally {
+      setDeletingId(null);
+    }
   };
 
   if (!unlocked) {
@@ -78,19 +128,30 @@ export default function AdminContacts() {
 
   return (
     <div className="max-w-6xl mx-auto px-5 md:px-8 py-12">
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
         <div>
           <h1 className="text-2xl md:text-3xl font-extrabold mb-1">Contact Leads</h1>
           <p className="text-sm text-slate-600">{submissions.length} submission(s)</p>
         </div>
-        <motion.button
-          onClick={() => load(token)}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium hover:border-brand transition-colors"
-        >
-          <RefreshCw size={16} /> Refresh
-        </motion.button>
+        <div className="flex items-center gap-3">
+          <motion.button
+            onClick={handleExport}
+            disabled={submissions.length === 0}
+            whileHover={submissions.length === 0 ? {} : { scale: 1.05 }}
+            whileTap={submissions.length === 0 ? {} : { scale: 0.95 }}
+            className="inline-flex items-center gap-2 rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand-dark transition-colors disabled:opacity-50"
+          >
+            <Download size={16} /> Export to Excel
+          </motion.button>
+          <motion.button
+            onClick={() => load(token)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center gap-2 rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium hover:border-brand transition-colors"
+          >
+            <RefreshCw size={16} /> Refresh
+          </motion.button>
+        </div>
       </div>
 
       {submissions.length === 0 ? (
@@ -101,7 +162,19 @@ export default function AdminContacts() {
             <div key={s._id} className="border border-slate-200 rounded-2xl p-6">
               <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                 <h3 className="font-bold text-lg">{s.fullName}</h3>
-                <span className="text-xs text-slate-500">{formatDate(s.createdAt)}</span>
+                <div className="flex items-center gap-3">
+                  <span className="text-xs text-slate-500">{formatDate(s.createdAt)}</span>
+                  <motion.button
+                    onClick={() => handleDelete(s._id)}
+                    disabled={deletingId === s._id}
+                    whileHover={deletingId === s._id ? {} : { scale: 1.1 }}
+                    whileTap={deletingId === s._id ? {} : { scale: 0.9 }}
+                    title="Delete this lead"
+                    className="text-slate-400 hover:text-red-600 transition-colors disabled:opacity-50"
+                  >
+                    <Trash2 size={16} />
+                  </motion.button>
+                </div>
               </div>
               <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-600 mb-4">
                 <span className="flex items-center gap-1.5">
