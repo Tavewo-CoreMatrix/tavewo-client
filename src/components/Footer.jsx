@@ -56,14 +56,15 @@ const socials = [
 const companyLinks = [
   { label: "About", to: "/about" },
   { label: "Division", to: "/division" },
-  { label: "Investors", to: "/investors" },
+  //{ label: "Investors", to: "/investors" },
   { label: "News & Insight", to: "/news" },
 ];
 
 const ecosystemLinks = [
-  { label: "Vescar", to: "/products" },
+  { label: "VERSCAR", to: "/products" },
   { label: "RespondrNG", to: "/products" },
-  { label: "TAVEWO Capital", to: "/products" },
+  { label: "CorePrep", to: "/products" },
+  { label: "TaveLink", to: "/products" },
   { label: "Technology", to: "/division" },
 ];
 
@@ -77,7 +78,7 @@ export default function Footer() {
             <img src="/images/tavewo-logo-transparent.png" alt="TAVEWO Ventures Ltd" className="h-9 w-auto mb-3" />
             <p className="text-sm text-navy/80 leading-relaxed max-w-xs font-medium">
               A technology-enabled conglomerate building Africa's most trusted corporate
-              ecosystem across innovation, logistics, capital and real estate.
+              ecosystem across innovation, logistics, and real estate.
             </p>
             <h4 className="font-semibold mt-6 mb-3">Connect With Us</h4>
             <div className="flex gap-3">

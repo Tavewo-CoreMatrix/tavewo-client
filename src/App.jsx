@@ -6,7 +6,7 @@ import Homepage from "./pages/Homepage";
 import About from "./pages/About";
 import Division from "./pages/Division";
 import Products from "./pages/Products";
-import Investors from "./pages/Investors";
+import Partnerships from "./pages/Partnerships";
 import News from "./pages/News";
 import NewsArticle from "./pages/NewsArticle";
 import ContactUs from "./pages/ContactUs";
@@ -46,7 +46,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/division" element={<Division />} />
             <Route path="/products" element={<Products />} />
-            <Route path="/investors" element={<Investors />} />
+            <Route path="/partnerships" element={<Partnerships />} />
             <Route path="/news" element={<News />} />
             <Route path="/news/:slug" element={<NewsArticle />} />
             <Route path="/contact" element={<ContactUs />} />

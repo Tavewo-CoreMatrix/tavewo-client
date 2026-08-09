@@ -11,7 +11,7 @@ export default function CtaBanner() {
             Ready To Scale With A Trusted Partner?
           </h2>
           <p className="text-blue-100 max-w-2xl mx-auto mb-8 leading-relaxed">
-            Whether you're an investor, enterprise buyer or operator, our team is ready to
+            Whether you're an enterprise buyer or operator, our team is ready to
             explore how the TAVEWO ecosystem can accelerate what you're building.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">

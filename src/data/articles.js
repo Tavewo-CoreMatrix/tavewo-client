@@ -24,9 +24,9 @@ const articles = [
     category: "Company news",
     image: "/images/news2.jpg",
     publishedAt: "2025-03-06",
-    excerpt: "Our new operating model unifies four business divisions under a shared engineering platform.",
+    excerpt: "Our new operating model unifies three business divisions under a shared engineering platform.",
     content: [
-      "TAVEWO Ventures has unveiled a new integrated ecosystem strategy that unifies its four business divisions — CoreMatrix, Global Assets & Capital, Fleet Telematics, and its product portfolio — under a single shared engineering platform.",
+      "TAVEWO Ventures has unveiled a new integrated ecosystem strategy that unifies its three business divisions — CoreMatrix, Global Assets & Capital, Fleet Telematics, and its product portfolio — under a single shared engineering platform.",
       "The move is designed to reduce duplication across divisions, allowing each operating company to draw on the same core infrastructure while maintaining its own P&L, team and sector expertise.",
       "Leadership described the strategy as the natural next step after several years of building out individual divisions independently. \"We were already sharing capital and reach — now we're formalising the shared engineering layer that makes the whole group compound faster,\" the Group CEO noted.",
     ],
@@ -47,11 +47,11 @@ const articles = [
   },
   {
     slug: "nationwide-fleet-milestone",
-    title: "Nationwide Fleet Operations Reach New Milestone.",
+    title: "TAVEWO Launches Pilot Fleet Operations",
     category: "Logistics news",
     image: "/images/news4.jpg",
     publishedAt: "2025-06-08",
-    excerpt: "500+ vehicles now onboarded to the Verscar work-and-own marketplace.",
+    excerpt: "3 vehicles onboarded to the VERSCAR work-and-own marketplace as the group begins its proprietary fleet pilot.",
     content: [
       "Verscar, TAVEWO's work-and-own mobility marketplace, has surpassed 500 vehicles onboarded across its verified driver and operator network — a milestone that reflects growing demand for structured, escrow-backed vehicle arrangements in Nigeria's mobility sector.",
       "The marketplace connects vehicle owners with vetted drivers and operators, using escrow-backed payments and asset protection to reduce the risk traditionally associated with informal work-and-own arrangements.",
@@ -60,13 +60,13 @@ const articles = [
   },
   {
     slug: "capital-closes-land-acquisition",
-    title: "TAVEWO Capital Closes Commercial Land Acquisition.",
+    title: "Global Assets & Procurement Expands Commercial Land Holdings",
     category: "Real Estate news",
     image: "/images/news5.jpg",
     publishedAt: "2025-07-03",
     excerpt: "Expanding the group's real estate portfolio in high-growth corridors.",
     content: [
-      "TAVEWO Capital Holdings has closed a new commercial land acquisition, expanding the group's real estate portfolio in one of Nigeria's high-growth development corridors.",
+      "TAVEWO Holdings has closed a new commercial land acquisition, expanding the group's real estate portfolio in one of Nigeria's high-growth development corridors.",
       "The acquisition forms part of TAVEWO Capital's broader land banking strategy, which pairs long-term asset appreciation with near-term infrastructure development opportunities for enterprise clients.",
       "The site is expected to support future commercial real estate and infrastructure projects, with planning already underway in coordination with the group's asset procurement and structured investments teams.",
     ],

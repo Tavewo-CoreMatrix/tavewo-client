@@ -7,30 +7,30 @@ import { MotionDiv, cardHover } from "../lib/motion";
 const whyChoose = [
   {
     title: "Our Vision",
-    desc: "To become Africa's most trusted technology-enabled corporate ecosystem.",
+    desc: "To become Africa's most trusted technology-enabled corporate ecosystem. One parent, three specialised divisions, and a single standard of delivery — wherever enterprise operates, TAVEWO builds the infrastructure it runs on.",
   },
   {
     title: "Our Mission",
-    desc: "Build innovation, trust and scale across every sector we operate in.",
+    desc: "We build once and scale everywhere — engineering shared across three specialised divisions, deployed wherever enterprise needs it most. From technology to logistics to real estate, every division draws on the same engineering capacity and the same operating discipline.",
   },
   {
     title: "Our Promise",
-    desc: "Enterprise-grade delivery, transparent partnerships and long-term value.",
+    desc: "Every division held to the same standard: licensed infrastructure, audited controls, and delivery you can verify. From licensed payment rails to chain-of-custody logging on every dispatch, trust isn't a tagline here — it's built into how we operate.",
   },
 ];
 
 const stats = [
-  { value: "12+", label: "Technology Solutions" },
-  { value: "500+", label: "Fleet Operations" },
-  { value: "60+", label: "Strategic Partnerships" },
-  { value: "$40M", label: "Real Estate Assets" },
+  { value: "4+", label: "Technology Solutions" },
+  { value: "Live Pilot", label: "Fleet Operations" },
+  { value: "10+", label: "Strategic Partnerships" },
+  { value: "Multi-City", label: "Real Estate Holdings" },
 ];
 
 const leadership = [
   { role: "Executive Chairman", dept: "Group Strategy", image: "/images/aboutpage-leadership-avatar1.jpg" },
   { role: "Group CEO", dept: "Operations", image: "/images/aboutpage-leadership-avatar2.jpg" },
+  { role: "COO", dept: "Technical Strategy", image: "/images/aboutpage-leadership-avatar4.jpg" },
   { role: "CTO", dept: "CoreMatrix", image: "/images/aboutpage-leadership-avatar3.jpg" },
-  { role: "CIO", dept: "Capital Holdings", image: "/images/aboutpage-leadership-avatar4.jpg" },
 ];
 
 export default function About() {
@@ -39,7 +39,7 @@ export default function About() {
       <HeroBanner
         eyebrow="About TAVEWO"
         title="Building The Infrastructure African Enterprise Depends On."
-        subtitle="TAVEWO Ventures Ltd unites specialised operating companies across technology, capital, logistics and real estate under one trusted parent."
+        subtitle="TAVEWO Ventures Ltd unites specialised operating companies across technology, logistics and real estate under one trusted parent."
       />
 
       {/* Our Story */}
@@ -51,15 +51,16 @@ export default function About() {
               Built To Last. Engineered To Scale.
             </h2>
             <p className="text-slate-600 leading-relaxed mb-5">
-              TAVEWO began as a technology practice building systems for logistics
-              operators and grew into a diversified conglomerate. Today our operating
-              companies serve investors, government agencies, fleet operators, property
-              owners and enterprise clients across Nigeria and West Africa.
+              TAVEWO began as a technology practice building systems for logistics 
+              operators and grew into a diversified conglomerate. Today our 
+              operating companies serve enterprise clients, government agencies, 
+              fleet operators and property owners across Nigeria and West Africa.
             </p>
             <p className="text-slate-600 leading-relaxed">
-              Our operating model is simple: build once, scale everywhere. Shared
-              engineering, shared capital, shared trust deployed across specialized
-              divisions with deep sector expertise.
+              Our operating model is simple: build once, scale everywhere. Shared 
+              engineering, shared infrastructure and shared trust deployed across 
+              specialized divisions with deep sector expertise.
+
             </p>
           </Reveal>
           <Reveal delay={0.15}>
@@ -120,7 +121,7 @@ export default function About() {
         <Reveal>
           <p className="text-brand font-semibold mb-3">Leadership</p>
           <h2 className="text-3xl md:text-4xl font-extrabold mb-12 leading-tight">
-            A Team Of Operators, Engineers And Financiers
+            A Team Of Operators, Engineers And Builders
           </h2>
         </Reveal>
         <StaggerGroup className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">

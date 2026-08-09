@@ -25,9 +25,9 @@ const divisions = [
   },
   {
     icon: Globe2,
-    name: "Global Assets & Capital",
-    tagline: "Asset procurement, treasury, FX and real estate.",
-    bullets: ["Treasury & FX", "Importation", "Real Estate", "Asset Procurement"],
+    name: "Global Assets & Procurement",
+    tagline: "Asset procurement, importation and real estate.",
+    bullets: ["Asset Procurement", "Importation", "Real Estate", "Land Banking"],
     image: "/images/homepage-division-card2.jpg",
   },
   {
@@ -55,21 +55,21 @@ const products = [
     to: "/products",
   },
   {
-    label: "Real Estate & Investments",
-    name: "TAVEWO Capital",
-    desc: "Land banking, commercial real estate, infrastructure and investments.",
-    cta: "Explore Portfolio",
+    label: "Conversational Learning",
+    name: "CorePrep",
+    desc: "WhatsApp-native training and exam prep, built for schools, academies and busineses.",
+    cta: "Learn more",
     to: "/products",
   },
 ];
 
 const whyUs = [
-  { icon: ShieldCheck, title: "Secure Operations", desc: "Enterprise-grade security across every touchpoint." },
-  { icon: Cog, title: "Automated Systems", desc: "AI and automation reduce cost, error and time-to-value." },
-  { icon: MapPinIcon, title: "Nationwide Reach", desc: "Enterprise-grade security across every touchpoint." },
-  { icon: Building2, title: "Technology Driven", desc: "In-house engineering and product craftsmanship." },
-  { icon: Lock, title: "Asset Protection", desc: "AI and automation reduce cost, error and time-to-value." },
-  { icon: ShieldCheck, title: "Secure Operations", desc: "Enterprise-grade security across every touchpoint." },
+  { icon: ShieldCheck, title: "Secure Operations", desc: "Enterprise-grade security across every touchpoint, from data to physical assets." },
+  { icon: Cog, title: "Automated Systems", desc: "AI and automation reduce cost, error and time-to-value across every division." },
+  { icon: MapPinIcon, title: "Nationwide Reach", desc: "Field operations, verification and fleet services delivered across Nigeria." },
+  { icon: Building2, title: "Technology Driven", desc: "In-house engineering and product craftsmanship power every platform." },
+  { icon: Lock, title: "Asset Protection", desc: "Tracking, verification and monitoring safeguard every vehicle and property." },
+  { icon: ShieldCheck, title: "Secure Operations", desc: "Long-term relationships built on transparent, reliable delivery." },
 ];
 
 export default function Homepage() {
@@ -103,7 +103,7 @@ export default function Homepage() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-4xl md:text-6xl font-extrabold leading-tight mb-6"
           >
-            Where Capital, Technology &amp; Infrastructure Converge
+            Where Technology &amp; Infrastructure Converge
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 16 }}
@@ -111,8 +111,8 @@ export default function Homepage() {
             transition={{ duration: 0.7, delay: 0.32 }}
             className="text-slate-300 text-base md:text-lg max-w-3xl mx-auto leading-relaxed mb-10"
           >
-            TAVEWO Ventures Ltd is a diversified enterprise group operating across tech
-            innovation, asset management, and fleet logistics, engineering the infrastructure
+            TAVEWO Ventures Ltd is a diversified enterprise group operating across technology,
+            asset management, and fleet logistics — engineering the infrastructure
             that powers the next generation of Nigerian enterprise.
           </motion.p>
           <motion.div
