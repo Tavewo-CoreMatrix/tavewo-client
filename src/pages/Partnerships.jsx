@@ -1,6 +1,7 @@
 import { ArrowRight, Zap, PiggyBank, Box, Landmark, Share2, TrendingUp, CheckCircle2 } from "lucide-react";
 import Reveal, { StaggerGroup, staggerItem } from "../components/Reveal";
 import { MotionLink, MotionDiv, buttonHover, cardHover } from "../lib/motion";
+import { motion } from "framer-motion";
 
 const pillars = [
   { icon: Zap, title: "Growth Strategy", desc: "Vertical integration across technology, logistics and real estate." },
@@ -56,7 +57,13 @@ export default function Partnerships() {
               className="border border-slate-200 rounded-2xl p-7 bg-white"
             >
               <div className="w-10 h-10 rounded-lg bg-brand flex items-center justify-center mb-5">
-                <p.icon size={18} className="text-white" />
+                <motion.div
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.7, ease: "easeInOut" }}
+                  className="inline-flex"
+                >
+                  <p.icon size={18} className="text-white" />
+                </motion.div>
               </div>
               <h3 className="font-bold text-lg mb-2">{p.title}</h3>
               <p className="text-sm text-slate-600">{p.desc}</p>

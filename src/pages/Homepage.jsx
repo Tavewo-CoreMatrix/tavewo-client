@@ -203,7 +203,13 @@ export default function Homepage() {
               <div className="h-40 relative overflow-hidden">
                 <img src={d.image} alt={d.name} className="w-full h-full object-cover " />
                 <div className="absolute inset-0 bg-navy/30 flex items-center justify-center">
-                  <d.icon size={44} className="text-white drop-shadow" />
+                  <motion.div
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.7, ease: "easeInOut" }}
+                    className="inline-flex"
+                  >
+                    <d.icon size={44} className="text-white drop-shadow" />
+                  </motion.div>
                 </div>
               </div>
               <div className="p-6">
@@ -274,7 +280,13 @@ export default function Homepage() {
               {...cardHover}
               className="border border-slate-200 rounded-xl p-6 bg-white"
             >
-              <f.icon className="text-brand mb-4" size={26} />
+              <motion.div
+                whileHover={{ rotate: 360 }}
+                transition={{ duration: 0.7, ease: "easeInOut" }}
+                className="mb-4 inline-flex"
+              >
+                <f.icon className="text-brand" size={26} />
+              </motion.div>
               <h4 className="font-bold mb-1.5">{f.title}</h4>
               <p className="text-sm text-slate-600">{f.desc}</p>
             </motion.div>

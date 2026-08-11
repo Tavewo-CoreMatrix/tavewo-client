@@ -3,6 +3,7 @@ import HeroBanner from "../components/HeroBanner";
 import CtaBanner from "../components/CtaBanner";
 import Reveal, { StaggerGroup, staggerItem } from "../components/Reveal";
 import { MotionDiv, cardHover } from "../lib/motion";
+import { motion } from "framer-motion";
 
 const whyChoose = [
   {
@@ -90,7 +91,13 @@ export default function About() {
                 className="bg-white rounded-2xl border border-slate-200 p-8 text-center"
               >
                 <div className="w-12 h-12 rounded-lg bg-brand-light flex items-center justify-center mx-auto mb-5">
-                  <ShieldCheck className="text-brand" size={22} />
+                  <motion.div
+                    whileHover={{ rotate: 360 }}
+                    transition={{ duration: 0.7, ease: "easeInOut" }}
+                    className="inline-flex"
+                  >
+                    <ShieldCheck className="text-brand" size={22} />
+                  </motion.div>
                 </div>
                 <h3 className="font-bold text-lg mb-2">{item.title}</h3>
                 <p className="text-sm text-slate-600">{item.desc}</p>

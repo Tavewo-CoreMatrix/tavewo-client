@@ -56,7 +56,8 @@ const socials = [
 const companyLinks = [
   { label: "About", to: "/about" },
   { label: "Division", to: "/division" },
-  //{ label: "Investors", to: "/investors" },
+  { label: "Products", to: "/products" },
+  { label: "Partnerships", to: "/partnerships" },
   { label: "News & Insight", to: "/news" },
 ];
 

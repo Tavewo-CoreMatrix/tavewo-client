@@ -2,6 +2,7 @@ import { ArrowRight, Check } from "lucide-react";
 import HeroBanner from "../components/HeroBanner";
 import Reveal from "../components/Reveal";
 import { MotionButton, MotionDiv, buttonHover, cardHover } from "../lib/motion";
+import { motion } from "framer-motion";
 
 const gallery = [
   { src: "/images/productpage-image-gallery1.jpg", alt: "Vescar mobility fleet" },
@@ -72,14 +73,42 @@ export default function Products() {
       />
 
       {/* Image gallery */}
-      <section className="max-w-7xl mx-auto px-5 md:px-8 pt-10 md:pt-14">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-1 sm:gap-1.5">
-          {gallery.map((g, i) => (
-            <Reveal key={g.src} delay={i * 0.1} y={16}>
-              <img src={g.src} alt={g.alt} className="h-56 sm:h-72 w-full object-cover hover:scale-90 transition-transform duration-500" />
-            </Reveal>
+      <section className="max-w-7xl mx-auto px-5 md:px-8 pt-10 md:pt-14 overflow-hidden">
+        <motion.div
+          className="flex gap-1 sm:gap-1.5 w-max"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            duration: 25,
+            ease: "linear",
+            repeat: Infinity,
+          }}
+        >
+          {/* First set */}
+          {gallery.map((g) => (
+            <div key={`first-${g.src}`} className="w-[80vw] sm:w-[32vw] md:w-[30vw] flex-shrink-0">
+              <motion.img
+                src={g.src}
+                alt={g.alt}
+                whileHover={{ scale: 0.95 }}
+                transition={{ duration: 0.3 }}
+                className="h-56 sm:h-72 w-full object-cover"
+              />
+            </div>
           ))}
-        </div>
+
+          {/* Duplicate set for seamless looping */}
+          {gallery.map((g) => (
+            <div key={`second-${g.src}`} className="w-[80vw] sm:w-[32vw] md:w-[30vw] flex-shrink-0">
+              <motion.img
+                src={g.src}
+                alt={g.alt}
+                whileHover={{ scale: 0.95 }}
+                transition={{ duration: 0.3 }}
+                className="h-56 sm:h-72 w-full object-cover"
+              />
+            </div>
+          ))}
+        </motion.div>
       </section>
 
       {/* Core Labs intro band */}
