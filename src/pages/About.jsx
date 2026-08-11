@@ -65,7 +65,9 @@ export default function About() {
             </p>
           </Reveal>
           <Reveal delay={0.15}>
-            <img
+            <motion.img
+              whileHover={{ rotate: 5}}
+              transition={{duration: 0.7, ease: "easeInOut"}}
               src="/images/aboutpage-our-story-section.jpg"
               alt="TAVEWO - built to last, engineered to scale"
               className="rounded-2xl h-72 md:h-96 w-full object-cover"

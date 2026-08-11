@@ -3,6 +3,7 @@ import HeroBanner from "../components/HeroBanner";
 import Reveal from "../components/Reveal";
 import { MotionButton, buttonHover } from "../lib/motion";
 import {Link} from "react-router-dom";
+import { motion } from "framer-motion";
 
 const divisions = [
   {
@@ -44,7 +45,9 @@ export default function Division() {
         <section key={d.title} className="max-w-7xl mx-auto px-5 md:px-8 py-14 md:py-20">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <Reveal y={30} className={d.imageFirst ? "md:order-1" : "md:order-2"}>
-              <img
+              <motion.img
+                whileHover={{ rotate: 5}}
+                transition={{duration: 0.7, ease: "easeInOut"}}
                 src={d.image}
                 alt={d.title}
                 className="rounded-2xl h-72 md:h-96 w-full object-cover"
@@ -62,7 +65,18 @@ export default function Division() {
                     key={tag}
                     className="flex items-center gap-2 bg-brand-light text-brand-dark text-sm font-medium rounded-lg px-3 py-2"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
+                    <motion.span
+                      className="w-1.5 h-1.5 rounded-full bg-brand shrink-0"
+                      animate={{
+                        scale: [1, 1.5, 1],
+                        opacity: [1, 0.5, 1],
+                      }}
+                      transition={{
+                        duration: 1.8,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                      }}
+                    />
                     {tag}
                   </span>
                 ))}

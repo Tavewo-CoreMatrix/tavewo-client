@@ -165,7 +165,9 @@ export default function Homepage() {
             </Link>
           </Reveal>
           <Reveal delay={0.15}>
-            <img
+            <motion.img
+              whileHover={{ rotate: 5}}
+              transition={{duration: 0.7, ease: "easeInOut"}}
               src="/images/homepage-aboutus.jpg"
               alt="TAVEWO conglomerate technology infrastructure"
               className="rounded-2xl h-72 md:h-96 w-full object-cover"
@@ -218,7 +220,19 @@ export default function Homepage() {
                 <ul className="grid grid-cols-2 gap-2 text-sm text-slate-700 mb-5">
                   {d.bullets.map((b) => (
                     <li key={b} className="flex items-center gap-1.5">
-                      <span className="w-1.5 h-1.5 rounded-full bg-brand" /> {b}
+                      <motion.span
+                        className="w-1.5 h-1.5 rounded-full bg-brand shrink-0"
+                        animate={{
+                          scale: [1, 1.5, 1],
+                          opacity: [1, 0.5, 1],
+                        }}
+                        transition={{
+                          duration: 1.8,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                        }}
+                      />
+                      {b}
                     </li>
                   ))}
                 </ul>
