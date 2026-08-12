@@ -111,7 +111,7 @@ export default function ContactUs() {
       <section className="max-w-7xl mx-auto px-5 md:px-8 py-16">
         <div className="grid md:grid-cols-[1.6fr_1fr] gap-8 items-start">
           {/* Form */}
-          <Reveal as="form" onSubmit={handleSubmit} className="border border-slate-200 rounded-2xl p-6 md:p-8 space-y-5">
+          <Reveal as="form" onSubmit={handleSubmit} className="border border-slate-200 rounded-2xl p-6 md:p-8 space-y-5 shadow-sm">
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
                 <label className="block text-sm font-semibold mb-1.5">Full Name</label>
@@ -213,7 +213,7 @@ export default function ContactUs() {
           </Reveal>
 
           {/* Corporate HQ card */}
-          <Reveal delay={0.15} className="border border-slate-200 rounded-2xl p-6 md:p-8">
+          <Reveal delay={0.15} className="border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm">
             <h3 className="text-2xl font-extrabold mb-6">Corporate HQ</h3>
             <div className="space-y-4 mb-8">
               <a href="tel:+2347030786368" className="flex items-center gap-3 text-sm font-medium">
@@ -224,7 +224,7 @@ export default function ContactUs() {
                 <Phone size={18} className="text-[#14213d]" />
                 +234 0904 743 2641
               </a>
-              <a href="mailto:tavewo@tavewo.com" className="flex items-center gap-3 text-sm font-medium hover:underline">
+              <a href="mailto:tavewo@tavewo.com" className="flex items-center gap-3 text-sm font-medium hover:underline active:underline">
                 <Mail size={18} className="text-[#14213d]" /> tavewo@tavewo.com
               </a>
               <div className="flex items-start gap-3 text-sm font-medium">
@@ -239,7 +239,7 @@ export default function ContactUs() {
                   href={href}
                   whileHover={{ scale: 1.12, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-9 h-9 rounded-full border border-slate-300 flex items-center justify-center hover:bg-navy hover:text-white hover:border-navy transition-colors"
+                  className="w-9 h-9 rounded-full border border-slate-300 flex items-center justify-center hover:bg-navy active:bg-navy hover:text-white active:text-white hover:border-navy active:border-navy transition-colors"
                 >
                   <Icon size={16} />
                 </motion.a>

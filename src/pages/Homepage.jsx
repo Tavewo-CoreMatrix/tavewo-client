@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import CtaBanner from "../components/CtaBanner";
 import Reveal, { StaggerGroup, staggerItem } from "../components/Reveal";
-import { MotionLink, buttonHover, cardHover } from "../lib/motion";
+import { MotionLink, buttonHover, cardHover, cardHover2, } from "../lib/motion";
 
 const divisions = [
   {
@@ -82,7 +82,7 @@ export default function Homepage() {
           alt=""
           className="absolute inset-0 w-full h-full object-cover opacity-200"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/80 to-navy" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/60 to-navy/70" />
         <motion.div
           className="relative max-w-5xl mx-auto text-center px-5 md:px-8 pt-20 pb-24"
           initial={{ opacity: 0, y: 24 }}
@@ -167,6 +167,7 @@ export default function Homepage() {
           <Reveal delay={0.15}>
             <motion.img
               whileHover={{ rotate: 5}}
+              whileTap={{ rotate: 5 }}
               transition={{duration: 0.7, ease: "easeInOut"}}
               src="/images/homepage-aboutus.jpg"
               alt="TAVEWO conglomerate technology infrastructure"
@@ -199,14 +200,15 @@ export default function Homepage() {
             <motion.div
               key={d.name}
               variants={staggerItem}
-              {...cardHover}
-              className="rounded-2xl border border-slate-200 overflow-hidden bg-white"
+              {...cardHover2}
+              className="rounded-2xl border border-slate-200 overflow-hidden shadow-lg bg-white hover:border-brand/70 active:border-brand/70"
             >
               <div className="h-40 relative overflow-hidden">
-                <img src={d.image} alt={d.name} className="w-full h-full object-cover " />
+                <img src={d.image} alt={d.name} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-navy/30 flex items-center justify-center">
                   <motion.div
                     whileHover={{ rotate: 360 }}
+                    whileTap={{ rotate: 360 }}
                     transition={{ duration: 0.7, ease: "easeInOut" }}
                     className="inline-flex"
                   >
@@ -236,7 +238,7 @@ export default function Homepage() {
                     </li>
                   ))}
                 </ul>
-                <Link to="/division" className="inline-flex items-center gap-2 hover:gap-3 transition-all font-semibold text-brand text-sm">
+                <Link to="/division" className="inline-flex items-center gap-2 hover:gap-3 transition-all font-semibold text-brand text-sm active:gap-3">
                   Explore Division <ArrowRight size={16} />
                 </Link>
               </div>
@@ -261,13 +263,13 @@ export default function Homepage() {
               <motion.div
                 key={p.name}
                 variants={staggerItem}
-                {...cardHover}
-                className="bg-white rounded-2xl border border-slate-200 p-6"
+                {...cardHover2}
+                className="bg-white rounded-2xl border shadow-lg border-slate-200 p-6"
               >
                 <p className="text-amber-600 text-sm font-semibold mb-1">{p.label}</p>
                 <h3 className="text-2xl font-extrabold mb-3">{p.name}</h3>
                 <p className="text-sm text-slate-600 mb-5">{p.desc}</p>
-                <Link to={p.to} className="inline-flex items-center gap-2 font-semibold text-brand text-sm hover:gap-3 transition-all">
+                <Link to={p.to} className="inline-flex items-center gap-2 font-semibold text-brand text-sm hover:gap-3 active:gap-3 transition-all">
                   {p.cta} <ArrowRight size={16} />
                 </Link>
               </motion.div>
@@ -291,11 +293,12 @@ export default function Homepage() {
             <motion.div
               key={i}
               variants={staggerItem}
-              {...cardHover}
-              className="border border-slate-200 rounded-xl p-6 bg-white"
+              {...cardHover2}
+              className="border border-slate-200 rounded-xl p-6 bg-white shadow-sm "
             >
               <motion.div
                 whileHover={{ rotate: 360 }}
+                whileTap={{ rotate: 360 }}
                 transition={{ duration: 0.7, ease: "easeInOut" }}
                 className="mb-4 inline-flex"
               >

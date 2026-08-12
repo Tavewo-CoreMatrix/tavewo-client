@@ -1,6 +1,6 @@
 import { ArrowRight, Zap, PiggyBank, Box, Landmark, Share2, TrendingUp, CheckCircle2 } from "lucide-react";
 import Reveal, { StaggerGroup, staggerItem } from "../components/Reveal";
-import { MotionLink, MotionDiv, buttonHover, cardHover } from "../lib/motion";
+import { MotionLink, MotionDiv, buttonHover, cardHover2 } from "../lib/motion";
 import { motion } from "framer-motion";
 
 const pillars = [
@@ -39,7 +39,7 @@ export default function Partnerships() {
           <MotionLink
             to="/contact"
             {...buttonHover}
-            className="inline-flex items-center gap-2 rounded-lg bg-brand px-7 py-3.5 font-semibold hover:bg-brand-dark transition-colors"
+            className="inline-flex items-center gap-2 rounded-lg bg-brand px-7 py-3.5 font-semibold hover:bg-brand-dark active:bg-brand-dark transition-colors"
           >
             Partner With Us <ArrowRight size={18} />
           </MotionLink>
@@ -53,12 +53,13 @@ export default function Partnerships() {
             <MotionDiv
               key={p.title}
               variants={staggerItem}
-              {...cardHover}
-              className="border border-slate-200 rounded-2xl p-7 bg-white"
+              {...cardHover2}
+              className="border border-slate-200 rounded-2xl p-7 bg-white shadow-sm"
             >
               <div className="w-10 h-10 rounded-lg bg-brand flex items-center justify-center mb-5">
                 <motion.div
                   whileHover={{ rotate: 360 }}
+                  whileTap={{rotate:360}}
                   transition={{ duration: 0.7, ease: "easeInOut" }}
                   className="inline-flex"
                 >
@@ -86,7 +87,7 @@ export default function Partnerships() {
               group's engineering and operational infrastructure.
             </p>
           </Reveal>
-          <StaggerGroup className="divide-y divide-slate-200">
+          <StaggerGroup className="divide-y divide-slate-200 ">
             {whyInvest.map((item) => (
               <MotionDiv key={item.title} variants={staggerItem} className="flex gap-4 py-5 first:pt-0">
                 <CheckCircle2 className="text-brand shrink-0 mt-0.5" size={22} />
@@ -114,7 +115,7 @@ export default function Partnerships() {
             <MotionLink
               to="/contact"
               {...buttonHover}
-              className="inline-flex rounded-lg bg-white text-navy px-6 py-3 font-semibold hover:bg-slate-100 transition-colors"
+              className="inline-flex rounded-lg bg-white text-navy px-6 py-3 font-semibold hover:bg-slate-100 active:bg-slate-100 transition-colors"
             >
               Contact Us
             </MotionLink>

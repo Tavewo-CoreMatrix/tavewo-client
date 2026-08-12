@@ -76,7 +76,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div>
 
-            <img src="/images/tavewo-logo-transparent.png" alt="TAVEWO Ventures Ltd" className="h-9 w-auto mb-3" />
+            <Link to="/"><img src="/images/tavewo-logo-transparent.png" alt="TAVEWO Ventures Ltd" className="h-9 w-auto mb-3" /></Link>
             <p className="text-sm text-navy/80 leading-relaxed max-w-xs font-medium">
               A technology-enabled conglomerate building Africa's most trusted corporate
               ecosystem across innovation, logistics, and real estate.
@@ -89,7 +89,7 @@ export default function Footer() {
                   href={href}
                   whileHover={{ scale: 1.12, y: -2 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-9 h-9 rounded-full border border-navy/40 flex items-center justify-center hover:bg-navy hover:text-white transition-colors"
+                  className="w-9 h-9 rounded-full border border-navy/40 flex items-center justify-center hover:bg-navy active:bg-navy hover:text-white active:text-white transition-colors"
                 >
                   <Icon size={16} />
                 </motion.a>
@@ -102,7 +102,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-navy/85 font-medium">
               {companyLinks.map((l) => (
                 <li key={l.label}>
-                  <Link to={l.to} className="hover:text-white transition-colors">
+                  <Link to={l.to} className="hover:text-white active:text-white transition-colors">
                     {l.label}
                   </Link>
                 </li>
@@ -115,7 +115,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-navy/85 font-medium">
               {ecosystemLinks.map((l) => (
                 <li key={l.label}>
-                  <Link to={l.to} className="hover:text-white transition-colors">
+                  <Link to={l.to} className="hover:text-white active:text-white transition-colors">
                     {l.label}
                   </Link>
                 </li>
@@ -126,15 +126,15 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-4">Get In Touch</h4>
             <div className="space-y-3 text-sm text-navy/85 transition-colors">
-              <a href="tel:+2347030786368" className="flex items-center gap-3 text-sm font-medium hover:text-white transition-colors">
+              <a href="tel:+2347030786368" className="flex items-center gap-3 text-sm font-medium hover:text-white active:text-white transition-colors">
                 <Phone size={18} className="text-[#14213d]" />
                 +234 0703 078 6368 
               </a>
-              <a href="tel:+2349047432641" className="flex items-center gap-3  text-sm font-medium hover:text-white transition-colors">
+              <a href="tel:+2349047432641" className="flex items-center gap-3  text-sm font-medium hover:text-white active:text-white transition-colors">
                 <Phone size={18} className="text-[#14213d]" />
                 +234 0904 743 2641
               </a>
-              <a href="mailto:tavewo@tavewo.com" className="flex items-center gap-3 text-sm font-medium hover:text-white hover:underline transition-colors">
+              <a href="mailto:tavewo@tavewo.com" className="flex items-center gap-3 text-sm font-medium hover:text-white active:text-white hover:underline active:underline transition-colors">
                 <Mail size={18} className="text-[#14213d]" />
                 tavewo@tavewo.com
               </a>

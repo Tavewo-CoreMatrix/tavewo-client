@@ -47,6 +47,7 @@ export default function Division() {
             <Reveal y={30} className={d.imageFirst ? "md:order-1" : "md:order-2"}>
               <motion.img
                 whileHover={{ rotate: 5}}
+                whileTap={{ rotate: 5}}
                 transition={{duration: 0.7, ease: "easeInOut"}}
                 src={d.image}
                 alt={d.title}
@@ -83,9 +84,9 @@ export default function Division() {
               </div>
               <MotionButton
                 {...buttonHover}
-                className="inline-flex items-center gap-2 rounded-lg bg-brand px-6 py-3 font-semibold text-white hover:bg-brand-dark transition-colors"
+                className="inline-flex items-center gap-2 rounded-lg bg-brand px-6 py-3 font-semibold text-white hover:bg-brand-dark active:bg-brand-dark transition-colors"
               >
-                <Link to="/contact" className="flex items-center gap-2">
+                <Link to="/contact" className="flex items-center gap-2 ">
                   Talk to this division <ArrowRight size={18} />
                 </Link>
               </MotionButton>

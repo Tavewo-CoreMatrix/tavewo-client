@@ -1,7 +1,7 @@
 import { ArrowRight, Check } from "lucide-react";
 import HeroBanner from "../components/HeroBanner";
 import Reveal from "../components/Reveal";
-import { MotionButton, MotionDiv, buttonHover, cardHover } from "../lib/motion";
+import { MotionButton, MotionDiv, buttonHover, cardHover, cardHover2 } from "../lib/motion";
 import { motion } from "framer-motion";
 
 const gallery = [
@@ -90,6 +90,7 @@ export default function Products() {
                 src={g.src}
                 alt={g.alt}
                 whileHover={{ scale: 0.95 }}
+                whileTap={{scale:0.95}}
                 transition={{ duration: 0.3 }}
                 className="h-56 sm:h-72 w-full object-cover"
               />
@@ -103,6 +104,7 @@ export default function Products() {
                 src={g.src}
                 alt={g.alt}
                 whileHover={{ scale: 0.95 }}
+                whileTap={{scale:0.95}}
                 transition={{ duration: 0.3 }}
                 className="h-56 sm:h-72 w-full object-cover"
               />
@@ -138,8 +140,8 @@ export default function Products() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-            {...cardHover}
-            className={`border rounded-2xl p-6 md:p-10 grid md:grid-cols-[1fr_1.4fr] gap-8 items-start bg-white ${
+            {...cardHover2}
+            className={`border rounded-2xl p-6 md:p-10 grid md:grid-cols-[1fr_1.4fr] gap-8 items-start hover:border-brand/70 bg-white ${
               p.comingSoon ? "border-dashed border-slate-300" : "border-slate-200"
             }`}
           >
@@ -153,8 +155,8 @@ export default function Products() {
                 {...buttonHover}
                 className={`inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold transition-colors ${
                   p.comingSoon
-                    ? "border-2 border-brand text-brand hover:bg-brand-light"
-                    : "bg-brand text-white hover:bg-brand-dark"
+                    ? "border-2 border-brand text-brand hover:bg-brand-light active:bg-brand-light"
+                    : "bg-brand text-white hover:bg-brand-dark active:bg-brand-dark"
                 }`}
               >
                 {p.cta} <ArrowRight size={18} />

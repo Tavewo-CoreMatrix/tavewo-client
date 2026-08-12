@@ -2,7 +2,7 @@ import { ShieldCheck } from "lucide-react";
 import HeroBanner from "../components/HeroBanner";
 import CtaBanner from "../components/CtaBanner";
 import Reveal, { StaggerGroup, staggerItem } from "../components/Reveal";
-import { MotionDiv, cardHover } from "../lib/motion";
+import { MotionDiv, cardHover, cardHover2 } from "../lib/motion";
 import { motion } from "framer-motion";
 
 const whyChoose = [
@@ -67,6 +67,7 @@ export default function About() {
           <Reveal delay={0.15}>
             <motion.img
               whileHover={{ rotate: 5}}
+              whileTap={{ rotate:5}}
               transition={{duration: 0.7, ease: "easeInOut"}}
               src="/images/aboutpage-our-story-section.jpg"
               alt="TAVEWO - built to last, engineered to scale"
@@ -89,8 +90,8 @@ export default function About() {
               <MotionDiv
                 key={item.title}
                 variants={staggerItem}
-                {...cardHover}
-                className="bg-white rounded-2xl border border-slate-200 p-8 text-center"
+                {...cardHover2}
+                className="bg-white rounded-2xl border border-slate-200 p-8 text-center shadow-lg hover:border-brand/70 active:border-brand/70"
               >
                 <div className="w-12 h-12 rounded-lg bg-brand-light flex items-center justify-center mx-auto mb-5">
                   <motion.div
@@ -138,10 +139,13 @@ export default function About() {
             <MotionDiv
               key={p.role}
               variants={staggerItem}
-              {...cardHover}
-              className="border border-slate-200 rounded-2xl p-6 text-center bg-white"
+              {...cardHover2}
+              className="border border-slate-200 rounded-2xl p-6 text-center bg-white shadow-lg"
             >
-              <img
+              <motion.img
+                whileHover={{scale:1.1}}
+                whileTap={{scale:1.1}}
+                transition={{duration:0.7, ease:"easeOut"}}
                 src={p.image}
                 alt={p.role}
                 className="w-20 h-20 rounded-full object-cover mx-auto mb-4"

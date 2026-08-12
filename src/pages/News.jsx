@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import HeroBanner from "../components/HeroBanner";
 import Reveal, { StaggerGroup, staggerItem } from "../components/Reveal";
-import { MotionLink, MotionDiv, buttonHover, cardHover } from "../lib/motion";
+import { MotionLink, MotionDiv, buttonHover, cardHover2 } from "../lib/motion";
 import articles, { getArticlesByCategory } from "../data/articles";
 
 const TABS = ["All", "Company news", "Technology news", "Logistics news", "Real Estate news"];
@@ -69,11 +69,11 @@ export default function News() {
             )}
 
             {featured && (
-              <div className="grid md:grid-cols-2 gap-8 items-center border border-slate-200 rounded-2xl overflow-hidden mb-10">
+              <div className="grid md:grid-cols-2 gap-8 items-center border border-slate-200 rounded-2xl overflow-hidden mb-10 shadow-sm">
                 <img
                   src={featured.image}
                   alt={featured.title}
-                  className="h-64 md:h-80 w-full rounded-2xl ml-2 object-cover hover:scale-102 transition-transform duration-500"
+                  className="h-64 md:h-80 w-full rounded-2xl ml-2 object-cover hover:scale-102 active:scale-102 transition-transform duration-500"
                 />
                 <div className="p-6 md:pr-10">
                   <div className="flex items-center gap-4 mb-4">
@@ -103,10 +103,10 @@ export default function News() {
                   <MotionDiv
                     key={a.slug}
                     variants={staggerItem}
-                    {...cardHover}
-                    className="border border-slate-200 rounded-2xl overflow-hidden flex flex-col bg-white"
+                    {...cardHover2}
+                    className="border border-slate-200 rounded-2xl overflow-hidden flex flex-col bg-white shadow-lg"
                   >
-                    <img src={a.image} alt={a.title} className="h-44 w-full object-cover" />
+                    <motion.img whileHover={{scale:1.02}} whileTap={{scale:1.02}} transition={{duration:0.5, ease:"easeInOut"}} src={a.image} alt={a.title} className="h-44 w-full object-cover" />
                     <div className="p-5 flex flex-col flex-1">
                       <div className="flex items-center gap-3 mb-3">
                         <span className="border border-brand text-brand text-xs font-semibold rounded-full px-3 py-1">
@@ -119,7 +119,7 @@ export default function News() {
                       <MotionLink
                         to={`/news/${a.slug}`}
                         {...buttonHover}
-                        className="inline-flex rounded-lg bg-brand px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-dark transition-colors"
+                        className="inline-flex rounded-lg bg-brand px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-dark active:bg-brand-dark transition-colors"
                       >
                         Read More
                       </MotionLink>
