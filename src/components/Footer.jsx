@@ -101,7 +101,7 @@ export default function Footer() {
             <h4 className="font-bold mb-4">Company</h4>
             <ul className="space-y-3 text-sm text-navy/85 font-medium">
               {companyLinks.map((l) => (
-                <motion.li key={l.label} whileHover={{x: 8}}>
+                <motion.li key={l.label} whileHover={{x: 8}} whileTap={{x: 8}}>
                   <Link to={l.to} className="hover:text-white active:text-white transition-colors">
                     {l.label}
                   </Link>
@@ -114,7 +114,7 @@ export default function Footer() {
             <h4 className="font-bold mb-4">Ecosystem</h4>
             <ul className="space-y-3 text-sm text-navy/85 font-medium">
               {ecosystemLinks.map((l) => (
-                <motion.li key={l.label} whileHover={{x: 8}}>
+                <motion.li key={l.label} whileHover={{x: 8}} whileTap={{x: 8}}>
                   <Link to={l.to} className="hover:text-white active:text-white transition-colors">
                     {l.label}
                   </Link>
@@ -126,19 +126,19 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-4">Get In Touch</h4>
             <div className="space-y-3 text-sm text-navy/85 transition-colors">
-              <motion.a href="tel:+2347030786368" whileHover={{x: 8}} className="flex items-center gap-3 text-sm font-medium hover:text-white active:text-white transition-colors">
+              <motion.a href="tel:+2347030786368" whileHover={{x: 8}} whileTap={{x: 8}} className="flex items-center gap-3 text-sm font-medium hover:text-white active:text-white transition-colors">
                 <Phone size={18} className="text-[#14213d]" />
                 +234 0703 078 6368 
               </motion.a>
-              <motion.a href="tel:+2349047432641" whileHover={{x: 8}} className="flex items-center gap-3  text-sm font-medium hover:text-white active:text-white transition-colors">
+              <motion.a href="tel:+2349047432641" whileHover={{x: 8}} whileTap={{x: 8}} className="flex items-center gap-3  text-sm font-medium hover:text-white active:text-white transition-colors">
                 <Phone size={18} className="text-[#14213d]" />
                 +234 0904 743 2641
               </motion.a>
-              <motion.a href="mailto:tavewo@tavewo.com" whileHover={{x: 8}} className="flex items-center gap-3 text-sm font-medium hover:text-white active:text-white hover:underline active:underline transition-colors">
+              <motion.a href="mailto:tavewo@tavewo.com" whileHover={{x: 8}} whileTap={{x: 8}} className="flex items-center gap-3 text-sm font-medium hover:text-white active:text-white hover:underline active:underline transition-colors">
                 <Mail size={18} className="text-[#14213d]" />
                 tavewo@tavewo.com
               </motion.a>
-              <motion.div whileHover={{x: 8}} className="flex items-start gap-3 text-sm font-medium">
+              <motion.div whileHover={{x: 8}} whileTap={{x: 8}} className="flex items-start gap-3 text-sm font-medium">
                 <MapPin size={18} className="text-[#14213d] mt-0.5 flex-shrink-0" />
                 <span>24, Abebi shopping complex, Mosafejo bus stop, Ibadan, Nigeria.</span>
               </motion.div>

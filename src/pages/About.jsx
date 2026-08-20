@@ -30,7 +30,7 @@ const stats = [
 const leadership = [
   { role: "Okeoghene Oghenekaro", dept: "CEO", image: "/images/CEO-pics.jpeg" },
   { role: "Christian Obaje", dept: "COO", image: "/images/COO-pics.jpg" },
-  { role: "Charles Emmanuel", dept: "CTO", image: "/images/aboutpage-leadership-avatar1.jpg" },
+  { role: "Charles Emmanuel", dept: "CTO", image: "/images/CTO-pics.jpeg" },
   { role: "Deborah Smart", dept: "Operations Architect", image: "/images/Ops_Arch.jpg" },
   { role: "Peace Nwaoha", dept: "Asset & Operations Manager, Head of Telematics & Tactical Fleet Ops", image: "/images/AOM-fleet-ops.jpg" },
   { role: "Morayo J. Egbayelo", dept: "Principal UI/UX Solution Architect", image: "/images/designer-uiux.jpg" },
@@ -146,7 +146,7 @@ export default function About() {
             >
               <motion.img
                 whileHover={{scale:1.3}}
-                whileTap={{scale:1.1}}
+                whileTap={{scale:1.2}}
                 transition={{duration:0.7, ease:"easeOut"}}
                 src={p.image}
                 alt={p.role}
