@@ -9,7 +9,7 @@ const divisions = [
   {
     eyebrow: "Technology & Innovation",
     title: "CoreMatrix",
-    desc: "Our enterprise technology arm. CoreMatrix designs, builds and ships AI-powered software and automation platforms used by operators across the group and by external enterprise clients. Product ownership sits with Core Labs, CoreMatrix's in-house product house — each platform is assigned a dedicated product lead accountable for its roadmap and commercial performance. Core Engineering builds, hardens and maintains every platform in production.",
+    desc: "Our enterprise technology arm. CoreMatrix designs, builds and ships AI-powered software and automation platforms used by operators across the group and by external enterprise clients. Each platform is assigned a dedicated product lead accountable for its roadmap and commercial performance, while our engineering team builds, hardens and maintains every platform in production.",
     tags: ["AI Automation", "Software Development", "Chatbots", "CRM System", "Product Lab"],
     image: "/images/divisionpage-corematrix-section1.jpg",
     imageFirst: true,
@@ -46,9 +46,9 @@ export default function Division() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <Reveal y={30} className={d.imageFirst ? "md:order-1" : "md:order-2"}>
               <motion.img
-                whileHover={{ rotate: 5}}
-                whileTap={{ rotate: 5}}
-                transition={{duration: 0.7, ease: "easeInOut"}}
+                whileHover={{ rotate: 3, scale: 1.05}}
+                whileTap={{ rotate: 3, scale: 1.05}}
+                transition={{duration: 0.9, ease: "easeInOut"}}
                 src={d.image}
                 alt={d.title}
                 className="rounded-2xl h-72 md:h-96 w-full object-cover"

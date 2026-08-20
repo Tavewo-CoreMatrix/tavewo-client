@@ -28,10 +28,12 @@ const stats = [
 ];
 
 const leadership = [
-  { role: "Executive Chairman", dept: "Group Strategy", image: "/images/aboutpage-leadership-avatar1.jpg" },
-  { role: "Group CEO", dept: "Operations", image: "/images/aboutpage-leadership-avatar2.jpg" },
-  { role: "COO", dept: "Technical Strategy", image: "/images/aboutpage-leadership-avatar4.jpg" },
-  { role: "CTO", dept: "CoreMatrix", image: "/images/aboutpage-leadership-avatar3.jpg" },
+  { role: "Okeoghene Oghenekaro", dept: "CEO", image: "/images/CEO-pics.jpeg" },
+  { role: "Christian Obaje", dept: "COO", image: "/images/COO-pics.jpg" },
+  { role: "Charles Emmanuel", dept: "CTO", image: "/images/aboutpage-leadership-avatar1.jpg" },
+  { role: "Deborah Smart", dept: "Operations Architect", image: "/images/Ops_Arch.jpg" },
+  { role: "Peace Nwaoha", dept: "Asset & Operations Manager, Head of Telematics & Tactical Fleet Ops", image: "/images/AOM-fleet-ops.jpg" },
+  { role: "Morayo J. Egbayelo", dept: "Principal UI/UX Solution Architect", image: "/images/designer-uiux.jpg" },
 ];
 
 export default function About() {
@@ -66,9 +68,9 @@ export default function About() {
           </Reveal>
           <Reveal delay={0.15}>
             <motion.img
-              whileHover={{ rotate: 5}}
-              whileTap={{ rotate:5}}
-              transition={{duration: 0.7, ease: "easeInOut"}}
+              whileHover={{ rotate: 3, scale: 1.05 }}
+              whileTap={{ rotate:3, scale: 1.05 }}
+              transition={{duration: 0.9, ease: "easeInOut"}}
               src="/images/aboutpage-our-story-section.jpg"
               alt="TAVEWO - built to last, engineered to scale"
               className="rounded-2xl h-72 md:h-96 w-full object-cover"
@@ -134,7 +136,7 @@ export default function About() {
             A Team Of Operators, Engineers And Builders
           </h2>
         </Reveal>
-        <StaggerGroup className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <StaggerGroup className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
           {leadership.map((p) => (
             <MotionDiv
               key={p.role}
@@ -143,7 +145,7 @@ export default function About() {
               className="border border-slate-200 rounded-2xl p-6 text-center bg-white shadow-lg"
             >
               <motion.img
-                whileHover={{scale:1.1}}
+                whileHover={{scale:1.3}}
                 whileTap={{scale:1.1}}
                 transition={{duration:0.7, ease:"easeOut"}}
                 src={p.image}

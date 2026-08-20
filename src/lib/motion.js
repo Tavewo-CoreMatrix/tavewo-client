@@ -16,7 +16,7 @@ export const buttonHover = {
 export const cardHover = {
   whileHover: { y: -6, boxShadow: "0 12px 28px rgba(10, 25, 48, 0.12)" },
   whileTap: { y: -6, boxShadow: "0 12px 28px rgba(10, 25, 48, 0.12)" },
-  transition: { type: "spring", stiffness: 300, damping: 22 },
+  transition: { type: "spring", stiffness: 300, damping: 22, duration: 0.7},
 };
 
  // Brand tokens used: --color-brand (#1B4D8C), --color-eyebrow (#9CC1EE),
@@ -39,5 +39,5 @@ export const cardHover2 = {
       "0 28px 50px rgba(20, 60, 110, 0.18)",
     ].join(", "),
   },
-  transition: { type: "spring", stiffness: 300, damping: 30 },
+  transition: { type: "spring", stiffness: 300, damping: 30, duration: 0.9, ease: "easeInOut" },
 };

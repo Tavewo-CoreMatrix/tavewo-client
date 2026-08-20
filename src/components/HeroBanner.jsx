@@ -7,7 +7,7 @@ export default function HeroBanner({ eyebrow, title, subtitle, children }) {
         className="max-w-4xl mx-auto"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.9, ease: [0.30, 1, 0.44, 1] }}
       >
         {eyebrow && (
           <p className="text-eyebrow font-medium mb-4 tracking-wide">{eyebrow}</p>

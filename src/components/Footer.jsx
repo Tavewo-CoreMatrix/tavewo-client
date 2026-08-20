@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { easeInOut, motion } from "framer-motion";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 const InstagramIcon = (props) => (
@@ -76,7 +76,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           <div>
 
-            <Link to="/"><img src="/images/tavewo-logo-transparent.png" alt="TAVEWO Ventures Ltd" className="h-9 w-auto mb-3" /></Link>
+            <Link to="/"><motion.img src="/images/tavewo-logo-transparent.png" alt="TAVEWO Ventures Ltd" className="h-9 w-auto mb-3" whileHover={{scale: 1.05}} whileTap={{scale: 0.95}} transition={{duration: 0.2, ease: easeInOut}} /></Link>
             <p className="text-sm text-navy/80 leading-relaxed max-w-xs font-medium">
               A technology-enabled conglomerate building Africa's most trusted corporate
               ecosystem across innovation, logistics, and real estate.
@@ -87,7 +87,7 @@ export default function Footer() {
                 <motion.a
                   key={i}
                   href={href}
-                  whileHover={{ scale: 1.12, y: -2 }}
+                  whileHover={{ scale: 1.12, y: -4 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-9 h-9 rounded-full border border-navy/40 flex items-center justify-center hover:bg-navy active:bg-navy hover:text-white active:text-white transition-colors"
                 >
@@ -101,11 +101,11 @@ export default function Footer() {
             <h4 className="font-bold mb-4">Company</h4>
             <ul className="space-y-3 text-sm text-navy/85 font-medium">
               {companyLinks.map((l) => (
-                <li key={l.label}>
+                <motion.li key={l.label} whileHover={{x: 8}}>
                   <Link to={l.to} className="hover:text-white active:text-white transition-colors">
                     {l.label}
                   </Link>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </div>
@@ -114,11 +114,11 @@ export default function Footer() {
             <h4 className="font-bold mb-4">Ecosystem</h4>
             <ul className="space-y-3 text-sm text-navy/85 font-medium">
               {ecosystemLinks.map((l) => (
-                <li key={l.label}>
+                <motion.li key={l.label} whileHover={{x: 8}}>
                   <Link to={l.to} className="hover:text-white active:text-white transition-colors">
                     {l.label}
                   </Link>
-                </li>
+                </motion.li>
               ))}
             </ul>
           </div>
@@ -126,22 +126,22 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-4">Get In Touch</h4>
             <div className="space-y-3 text-sm text-navy/85 transition-colors">
-              <a href="tel:+2347030786368" className="flex items-center gap-3 text-sm font-medium hover:text-white active:text-white transition-colors">
+              <motion.a href="tel:+2347030786368" whileHover={{x: 8}} className="flex items-center gap-3 text-sm font-medium hover:text-white active:text-white transition-colors">
                 <Phone size={18} className="text-[#14213d]" />
                 +234 0703 078 6368 
-              </a>
-              <a href="tel:+2349047432641" className="flex items-center gap-3  text-sm font-medium hover:text-white active:text-white transition-colors">
+              </motion.a>
+              <motion.a href="tel:+2349047432641" whileHover={{x: 8}} className="flex items-center gap-3  text-sm font-medium hover:text-white active:text-white transition-colors">
                 <Phone size={18} className="text-[#14213d]" />
                 +234 0904 743 2641
-              </a>
-              <a href="mailto:tavewo@tavewo.com" className="flex items-center gap-3 text-sm font-medium hover:text-white active:text-white hover:underline active:underline transition-colors">
+              </motion.a>
+              <motion.a href="mailto:tavewo@tavewo.com" whileHover={{x: 8}} className="flex items-center gap-3 text-sm font-medium hover:text-white active:text-white hover:underline active:underline transition-colors">
                 <Mail size={18} className="text-[#14213d]" />
                 tavewo@tavewo.com
-              </a>
-              <div className="flex items-start gap-3 text-sm font-medium">
+              </motion.a>
+              <motion.div whileHover={{x: 8}} className="flex items-start gap-3 text-sm font-medium">
                 <MapPin size={18} className="text-[#14213d] mt-0.5 flex-shrink-0" />
                 <span>24, Abebi shopping complex, Mosafejo bus stop, Ibadan, Nigeria.</span>
-              </div>
+              </motion.div>
             </div>
           </div>
 

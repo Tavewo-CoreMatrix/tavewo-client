@@ -12,19 +12,6 @@ const gallery = [
 
 const products = [
   {
-    category: "Mobility Marketplace",
-    title: "VERSCAR",
-    desc: "The work-and-own mobility marketplace. Vescar connects vehicle owners, drivers and operators through verified onboarding, escrow-backed transactions and asset protection.",
-    features: [
-      "Work-and-Own Marketplace",
-      "Vehicle Rentals",
-      "Escrow Backed-Payment",
-      "Driver Verifications",
-      "Asset Protection",
-    ],
-    cta: "Talk to this Division",
-  },
-  {
     category: "Emergency Operations Platform",
     title: "RespondrNG",
     desc: "A dispatch and incident management platform for emergency and response teams with GPS tracking, intelligent routing and open APIs for integration.",
@@ -47,6 +34,20 @@ const products = [
       "Spreadsheet-to-Course",
     ],
     cta: "Try CorePrep",
+  },
+  {
+    category: "Mobility Marketplace",
+    comingSoon: true,
+    title: "VERSCAR",
+    desc: "The work-and-own mobility marketplace, launching soon. VERSCAR will connect vehicle owners, drivers and operators  through verified onboarding, escrow-backed transactions and asset protection.",
+    features: [
+      "Work-and-Own Marketplace",
+      "Vehicle Rentals",
+      "Escrow Backed-Payment",
+      "Driver Verifications",
+      "Asset Protection",
+    ],
+    cta: "Coming Soon",
   },
   {
     category: "Professional Network",
@@ -113,20 +114,18 @@ export default function Products() {
         </motion.div>
       </section>
 
-      {/* Core Labs intro band */}
+      {/* CoreMatrix intro band */}
       <section className="bg-navy text-white mt-14 md:mt-20">
         <Reveal className="max-w-3xl mx-auto text-center px-5 md:px-8 py-16 md:py-20">
-          <p className="text-eyebrow font-medium mb-4 tracking-wide">Core Labs</p>
+          <p className="text-eyebrow font-medium mb-4 tracking-wide">CoreMatrix</p>
           <h2 className="text-2xl md:text-4xl font-extrabold leading-tight mb-6">
             The product house behind every platform
           </h2>
           <p className="text-slate-300 leading-relaxed">
-            Core Labs is CoreMatrix's dedicated product house. It holds commercial
-            ownership of the group's proprietary platforms below, and each one is
-            assigned a named product lead accountable for its roadmap, adoption and
-            commercial performance. Core Labs decides what gets built and why — Core
-            Engineering, our shared build team, builds, hardens and maintains it in
-            production.
+            CoreMatrix is the group's enterprise technology arm. It holds commercial ownership of the proprietary platforms 
+            below, and each one is assigned a named product lead accountable for its roadmap, adoption and commercial 
+            performance. CoreMatrix decides what gets built and why — our engineering team builds, hardens and maintains 
+            it in production.
           </p>
         </Reveal>
       </section>
@@ -147,7 +146,7 @@ export default function Products() {
           >
             <div>
               <p className="text-brand font-semibold mb-2">
-                Core Labs · {p.category}
+                CoreMatrix · {p.category}
                 {p.comingSoon && " · Coming Soon"}
               </p>
               <h2 className="text-3xl font-extrabold mb-6">{p.title}</h2>

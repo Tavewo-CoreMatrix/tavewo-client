@@ -254,7 +254,7 @@ export default function ContactUs() {
         <iframe
           title="TAVEWO Corporate HQ Location"
           className="w-full h-full border-0"
-          src="https://maps.google.com/maps?q=Ibadan,Nigeria&t=&z=11&ie=UTF8&iwloc=&output=embed"
+          src="https://maps.google.com/maps?q=Suite%2024%2C%20Abebi%20Shopping%20Complex%2C%20Mosafejo%20Bus%20Stop%2C%20Sango%20Eleyele%20Road%2C%20Eleyele%2C%20Ibadan%2C%20Oyo%2C%20Nigeria&t=&z=17&ie=UTF8&iwloc=&output=embed"
           loading="lazy"
         />
       </section>

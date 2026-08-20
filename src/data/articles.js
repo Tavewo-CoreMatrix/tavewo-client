@@ -47,11 +47,11 @@ const articles = [
   },
   {
     slug: "nationwide-fleet-milestone",
-    title: "TAVEWO Launches Pilot Fleet Operations",
+    title: "TAVEWO Begins Fleet Pilot Preparations",
     category: "Logistics news",
     image: "/images/news4.jpg",
     publishedAt: "2025-06-08",
-    excerpt: "3 vehicles onboarded to the VERSCAR work-and-own marketplace as the group begins its proprietary fleet pilot.",
+    excerpt: "3 vehicles secured for the group's proprietary fleet pilot, ahead of the VERSCAR marketplace's upcoming launch.",
     content: [
       "Verscar, TAVEWO's work-and-own mobility marketplace, has surpassed 500 vehicles onboarded across its verified driver and operator network — a milestone that reflects growing demand for structured, escrow-backed vehicle arrangements in Nigeria's mobility sector.",
       "The marketplace connects vehicle owners with vetted drivers and operators, using escrow-backed payments and asset protection to reduce the risk traditionally associated with informal work-and-own arrangements.",

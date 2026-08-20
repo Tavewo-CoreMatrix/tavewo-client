@@ -166,9 +166,9 @@ export default function Homepage() {
           </Reveal>
           <Reveal delay={0.15}>
             <motion.img
-              whileHover={{ rotate: 5}}
-              whileTap={{ rotate: 5 }}
-              transition={{duration: 0.7, ease: "easeInOut"}}
+              whileHover={{ rotate: 3, scale: 1.05}}
+              whileTap={{ rotate: 3, scale: 1.05 }}
+              transition={{duration: 0.9, ease: "easeInOut"}}
               src="/images/homepage-aboutus.jpg"
               alt="TAVEWO conglomerate technology infrastructure"
               className="rounded-2xl h-72 md:h-96 w-full object-cover"
