@@ -71,7 +71,7 @@ export default function About() {
               whileHover={{ rotate: 3, scale: 1.05 }}
               whileTap={{ rotate:3, scale: 1.05 }}
               transition={{duration: 0.9, ease: "easeInOut"}}
-              src="/images/aboutpage-our-story-section.jpg"
+              src="/images/About-our-story.png"
               alt="TAVEWO - built to last, engineered to scale"
               className="rounded-2xl h-72 md:h-96 w-full object-cover"
             />

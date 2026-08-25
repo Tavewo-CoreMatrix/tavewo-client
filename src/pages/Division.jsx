@@ -11,7 +11,7 @@ const divisions = [
     title: "CoreMatrix",
     desc: "Our enterprise technology arm. CoreMatrix designs, builds and ships AI-powered software and automation platforms used by operators across the group and by external enterprise clients. Each platform is assigned a dedicated product lead accountable for its roadmap and commercial performance, while our engineering team builds, hardens and maintains every platform in production.",
     tags: ["AI Automation", "Software Development", "Chatbots", "CRM System", "Product Lab"],
-    image: "/images/divisionpage-corematrix-section1.jpg",
+    image: "/images/CoreMatrix.png",
     imageFirst: true,
   },
   {
@@ -27,7 +27,7 @@ const divisions = [
     title: "Telematics & Tactical Fleet Operations",
     desc: "Nationwide logistics, verification and emergency operations. From fleet management to asset recovery and dispatch, we deliver the physical layer of the ecosystem.",
     tags: ["Fleet Management", "Vehicle Verification", "Asset Recovery", "Emergency Operation", "Workshop"],
-    image: "/images/divisionpage-telematics-section3.jpg",
+    image: "/images/Telematics.jpg",
     imageFirst: true,
   },
 ];
