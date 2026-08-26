@@ -53,9 +53,11 @@ const articles = [
     publishedAt: "2025-06-08",
     excerpt: "3 vehicles secured for the group's proprietary fleet pilot, ahead of the VERSCAR marketplace's upcoming launch.",
     content: [
-      "Verscar, TAVEWO's work-and-own mobility marketplace, has surpassed 500 vehicles onboarded across its verified driver and operator network — a milestone that reflects growing demand for structured, escrow-backed vehicle arrangements in Nigeria's mobility sector.",
-      "The marketplace connects vehicle owners with vetted drivers and operators, using escrow-backed payments and asset protection to reduce the risk traditionally associated with informal work-and-own arrangements.",
-      "\"Every vehicle on the platform goes through the same verification pipeline, whether it's the first or the five-hundredth,\" said a Verscar operations lead. \"That consistency is what builds trust with both owners and drivers.\"",
+      "VERSCAR, TAVEWO Ventures' work-and-own mobility platform, has successfully secured three vehicles for its proprietary fleet pilot, marking an important operational milestone ahead of the official launch of the VERSCAR marketplace.",
+      "The fleet pilot is designed to validate VERSCAR's end-to-end mobility operations, including vehicle onboarding, driver verification, asset management, and escrow-backed payment workflows before the platform opens to the public. It represents the first phase of TAVEWO's vision to build a trusted, technology-enabled work-and-own ecosystem for Nigeria's mobility sector.",
+      " \"Securing the first three vehicles is more than a fleet milestone—it's the beginning of building an operational model that prioritizes trust, accountability, and structured vehicle ownership opportunities,\" a VERSCAR operations lead said.",
+      "As preparations continue for the marketplace launch, VERSCAR is focused on refining its verification processes and operational standards to ensure a seamless experience for both vehicle owners and drivers. The upcoming marketplace will connect verified vehicle owners with vetted drivers and operators through secure, escrow-backed agreements designed to reduce the risks commonly associated with informal work-and-own arrangements.",
+      "The proprietary fleet pilot provides the operational foundation for the broader VERSCAR marketplace, which will launch with a commitment to transparency, security, and scalable mobility solutions across Nigeria.",
     ],
   },
   {
@@ -97,6 +99,36 @@ const articles = [
       "\"Emergency response shouldn't be slowed down by systems that don't talk to each other,\" said a RespondrNG product lead. \"These APIs mean an incident reported in one jurisdiction can be routed to the nearest available unit, regardless of which agency owns that unit.\"",
     ],
   },
+  {
+    slug: "respondrng-app-launching-soon",
+    title: "RespondrNG App Launching Soon on Google Play Store.",
+    category: "Technology news",
+    image: "/images/RESPONDRNG.jpg",
+    publishedAt: "2026-08-25",
+    excerpt:"RespondrNG, TAVEWO Ventures' emergency response and public safety platform, will officially launch on the Google Play Store on September 30, 2026.",
+    content: [
+      "TAVEWO Ventures has announced the official launch date for RespondrNG, its technology-driven emergency response and public safety application, which will be available for download on the Google Play Store starting September 30, 2026.",
+      "RespondrNG is designed to help individuals and communities respond faster during emergencies by connecting users with nearby emergency services, trusted contacts, and real-time location-based assistance through a secure and intuitive mobile experience.",
+      "The launch marks a major milestone in TAVEWO Ventures' mission to build technology solutions that improve safety, mobility, and everyday life across Nigeria. The initial Android release will make RespondrNG accessible to users nationwide, with additional platform enhancements and future releases already in the product roadmap.",
+      "As the countdown to launch begins, TAVEWO Ventures encourages users to stay connected through its official channels for launch updates, feature announcements, and early onboarding information ahead of September 30, 2026."
+    ],
+  },
+  {
+    slug: "tavewo-ventures-internship-program-2026",
+    title: "Tavewo Ventures Internship Program 2026 Now Open Across Nigeria.",
+    category: "Company news",
+    image: "/images/Internship-news.jpg",
+    publishedAt: "2026-08-26",
+    excerpt:"Tavewo Ventures Ltd is expanding its team and inviting passionate young professionals across Nigeria to apply for its nationwide internship program.",
+    content: [
+      "Tavewo Ventures Ltd has officially opened applications for its 2026 Internship Program, welcoming talented and ambitious individuals from across Nigeria to join its growing team and gain hands-on industry experience.",
+      "The internship program is designed to equip participants with practical, real-world skills by working on live projects across technology, design, and digital communications within the Tavewo ecosystem.",
+      "Applications are currently open for the following internship roles: Graphic Designer, Social Media Manager, Frontend Developer, Backend Developer, and Full-Stack Engineer.",
+      "Successful interns will receive hands-on, on-the-job training, access to professional learning resources and courses, an official internship completion certificate, and opportunities to showcase their projects publicly across Tavewo Ventures' social media platforms and digital channels.",
+      "This program is ideal for students, recent graduates, and early-career professionals looking to build their portfolios, gain mentorship, and kickstart their careers in a fast-growing technology and innovation company.",
+      "Interested applicants should send their CV and cover letter to tavewo@tavewo.com, using the internship role they are applying for as the subject line of the email."
+    ],
+  }
 ];
 
 export default articles;

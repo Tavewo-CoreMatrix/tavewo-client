@@ -21,21 +21,21 @@ const divisions = [
     name: "CoreMatrix",
     tagline: "AI, automation and enterprise software built for scale.",
     bullets: ["AI Automation", "Chatbots", "CRM Systems", "Software Development"],
-    image: "/images/homepage-division-card1.jpg",
+    image: "/images/CoreMatrix2.jpg",
   },
   {
     icon: Globe2,
     name: "Global Assets & Procurement",
     tagline: "Asset procurement, importation and real estate.",
     bullets: ["Asset Procurement", "Importation", "Real Estate", "Land Banking"],
-    image: "/images/homepage-division-card2.jpg",
+    image: "/images/divisionpage-global-assets-section2.jpg",
   },
   {
     icon: Truck,
     name: "Fleet Telematics",
     tagline: "Fleet management, verification and emergency operations.",
     bullets: ["Asset Recovery", "Emergency Ops", "Vehicle Verification", "Fleet Management"],
-    image: "/images/homepage-division-card3.jpg",
+    image: "/images/Telematics.jpg",
   },
 ];
 
@@ -169,7 +169,7 @@ export default function Homepage() {
               whileHover={{ rotate: 3, scale: 1.05}}
               whileTap={{ rotate: 3, scale: 1.05 }}
               transition={{duration: 0.9, ease: "easeInOut"}}
-              src="/images/homepage-aboutus.jpg"
+              src="/images/About-our-story.png"
               alt="TAVEWO conglomerate technology infrastructure"
               className="rounded-2xl h-72 md:h-96 w-full object-cover"
             />
