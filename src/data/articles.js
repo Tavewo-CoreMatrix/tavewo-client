@@ -3,7 +3,7 @@
 // to this array; both the listing page and the detail page read from it.
 
 const articles = [
-  {
+  /*{
     slug: "strategic-partnership-fleet-security",
     title: "Tavewo Ventures Announces Strategic Partnership To Enhance Fleet Security Across Nigeria",
     category: "Company news",
@@ -98,27 +98,14 @@ const articles = [
       "The partnership introduces new open APIs that let agencies plug directly into RespondrNG's dispatch console, GPS tracking and incident management tools — reducing the friction of coordinating a response across multiple teams and geographies.",
       "\"Emergency response shouldn't be slowed down by systems that don't talk to each other,\" said a RespondrNG product lead. \"These APIs mean an incident reported in one jurisdiction can be routed to the nearest available unit, regardless of which agency owns that unit.\"",
     ],
-  },
-  {
-    slug: "respondrng-app-launching-soon",
-    title: "RespondrNG App Launching Soon on Google Play Store.",
-    category: "Technology news",
-    image: "/images/RESPONDRNG.jpg",
-    publishedAt: "2026-08-25",
-    excerpt:"RespondrNG, TAVEWO Ventures' emergency response and public safety platform, will officially launch on the Google Play Store on September 30, 2026.",
-    content: [
-      "TAVEWO Ventures has announced the official launch date for RespondrNG, its technology-driven emergency response and public safety application, which will be available for download on the Google Play Store starting September 30, 2026.",
-      "RespondrNG is designed to help individuals and communities respond faster during emergencies by connecting users with nearby emergency services, trusted contacts, and real-time location-based assistance through a secure and intuitive mobile experience.",
-      "The launch marks a major milestone in TAVEWO Ventures' mission to build technology solutions that improve safety, mobility, and everyday life across Nigeria. The initial Android release will make RespondrNG accessible to users nationwide, with additional platform enhancements and future releases already in the product roadmap.",
-      "As the countdown to launch begins, TAVEWO Ventures encourages users to stay connected through its official channels for launch updates, feature announcements, and early onboarding information ahead of September 30, 2026."
-    ],
-  },
+  },*/
   {
     slug: "tavewo-ventures-internship-program-2026",
     title: "Tavewo Ventures Internship Program 2026 Now Open Across Nigeria.",
     category: "Company news",
     image: "/images/Internship-news.jpg",
-    publishedAt: "2026-08-26",
+    publishedAt: "2026-08-25",
+    featured: true,
     excerpt:"Tavewo Ventures Ltd is expanding its team and inviting passionate young professionals across Nigeria to apply for its nationwide internship program.",
     content: [
       "Tavewo Ventures Ltd has officially opened applications for its 2026 Internship Program, welcoming talented and ambitious individuals from across Nigeria to join its growing team and gain hands-on industry experience.",
@@ -128,7 +115,22 @@ const articles = [
       "This program is ideal for students, recent graduates, and early-career professionals looking to build their portfolios, gain mentorship, and kickstart their careers in a fast-growing technology and innovation company.",
       "Interested applicants should send their CV and cover letter to tavewo@tavewo.com, using the internship role they are applying for as the subject line of the email."
     ],
-  }
+  },
+  {
+    slug: "respondrng-app-launching-soon",
+    title: "RespondrNG App Launching Soon on Google Play Store.",
+    category: "Technology news",
+    image: "/images/RESPONDRNG.jpg",
+    publishedAt: "2026-08-26",
+    excerpt:"RespondrNG, TAVEWO Ventures' emergency response and public safety platform, will officially launch on the Google Play Store on September 30, 2026.",
+    content: [
+      "TAVEWO Ventures has announced the official launch date for RespondrNG, its technology-driven emergency response and public safety application, which will be available for download on the Google Play Store starting September 30, 2026.",
+      "RespondrNG is designed to help individuals and communities respond faster during emergencies by connecting users with nearby emergency services, trusted contacts, and real-time location-based assistance through a secure and intuitive mobile experience.",
+      "The launch marks a major milestone in TAVEWO Ventures' mission to build technology solutions that improve safety, mobility, and everyday life across Nigeria. The initial Android release will make RespondrNG accessible to users nationwide, with additional platform enhancements and future releases already in the product roadmap.",
+      "As the countdown to launch begins, TAVEWO Ventures encourages users to stay connected through its official channels for launch updates, feature announcements, and early onboarding information ahead of September 30, 2026."
+    ],
+  },
+  
 ];
 
 export default articles;

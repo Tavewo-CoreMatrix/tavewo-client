@@ -2,46 +2,37 @@ import { Link } from "react-router-dom";
 import { easeInOut, motion } from "framer-motion";
 import { Phone, Mail, MapPin } from "lucide-react";
 
-const InstagramIcon = (props) => (
+const InstagramIcon = ({ size = 16, className = "", ...rest }) => (
   <svg
+    width={size}
+    height={size}
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
     strokeWidth="1.8"
-    {...props}
+    className={className}
+    {...rest}
   >
-    <g transform="translate(12 12) scale(0.85) translate(-12 -12)">
-      <rect x="3" y="3" width="18" height="18" rx="5" />
-      <circle cx="12" cy="12" r="4" />
-      <circle
-        cx="17.5"
-        cy="6.5"
-        r="1"
-        fill="currentColor"
-        stroke="none"
-      />
-    </g>
+    <rect x="3" y="3" width="18" height="18" rx="5" />
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
   </svg>
 );
 
-const XIcon = (props) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
-    <g transform="translate(12 12) scale(0.84) translate(-12 -12)">
-      <path d="M18.9 2H22l-7.6 8.7L23.3 22H16.6l-5.2-6.8L5.4 22H2.3l8.1-9.3L1.5 2h6.9l4.7 6.2L18.9 2Zm-1.2 18h1.7L7.4 4H5.6l12.1 16Z" />
-    </g>
+const XIcon = ({ size = 16, className = "", ...rest }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} {...rest}>
+    <path d="M18.9 2H22l-7.6 8.7L23.3 22H16.6l-5.2-6.8L5.4 22H2.3l8.1-9.3L1.5 2h6.9l4.7 6.2L18.9 2Zm-1.2 18h1.7L7.4 4H5.6l12.1 16Z" />
   </svg>
 );
 
-const LinkedinIcon = (props) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
-    <g transform="translate(12 12) scale(0.86) translate(-12 -12)">
-      <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.6c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.97V21h-4V9Z" />
-    </g>
+const LinkedinIcon = ({ size = 16, className = "", ...rest }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} {...rest}>
+    <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.6c0-1.34-.02-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.97V21h-4V9Z" />
   </svg>
 );
 
-const FacebookIcon = (props) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+const FacebookIcon = ({ size = 16, className = "", ...rest }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} {...rest}>
     <path d="M22 12a10 10 0 1 0-11.6 9.88v-6.99H7.9V12h2.5V9.8c0-2.47 1.47-3.84 3.72-3.84 1.08 0 2.21.19 2.21.19v2.43h-1.24c-1.23 0-1.61.76-1.61 1.54V12h2.75l-.44 2.89h-2.31v6.99A10 10 0 0 0 22 12Z" />
   </svg>
 );
@@ -91,7 +82,7 @@ export default function Footer() {
                   whileTap={{ scale: 0.95 }}
                   className="w-9 h-9 rounded-full border border-navy/40 flex items-center justify-center hover:bg-navy active:bg-navy hover:text-white active:text-white transition-colors"
                 >
-                  <Icon size={16} />
+                  <Icon size={20} />
                 </motion.a>
               ))}
             </div>
