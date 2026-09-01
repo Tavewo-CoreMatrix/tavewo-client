@@ -14,13 +14,55 @@ const products = [
   {
     category: "Emergency Operations Platform",
     title: "RespondrNG",
-    desc: "A dispatch and incident management platform for emergency and response teams with GPS tracking, intelligent routing and open APIs for integration.",
+    tagline: "Silent when danger is watching. Unstoppable when help is needed.",
+    desc: "RespondrNG is an innovative emergency response and personal safety mobile application designed to provide individuals with immediate access to help during emergencies. The platform leverages location-based technology, real-time communication, discreet activation methods, and intelligent alert systems to bridge the gap between people in distress, emergency service providers, and trusted contacts. Its mission is to improve response times, enhance public safety, and ensure that users can quickly and — when necessary, silently — access assistance and preserve evidence of an incident, regardless of their location or internet connectivity.",
+    featuresHeading: "Key Features",
     features: [
-      "Dispatch Console",
-      "Real-time GPS Tracking",
-      "Intelligent Routing",
-      "Incident Management",
+      "Location-Based Emergency Service Finder",
+      "SOS Emergency Alert System",
+      "Live Location Sharing",
+      "Audio Streaming Capability",
+      "Offline Emergency Support",
+      "Emergency Contact Management",
+      "Real-Time Notifications and Updates",
+      "User-Friendly Mobile Interface",
+      "Secure Data Handling",
+      "Physical Gesture Trigger",
+      "Safety Timer (Dead-Man Switch)",
+      "Covert Mode (Fake Screen)",
+      "Tamper-Proof Cloud Evidence Vault",
+      "Duress PIN (Bad Actor / Extortion Protocol)",
     ],
+    purposeIntro: "RespondrNG is built to address the challenges individuals face in accessing timely emergency support. The application empowers users to:",
+    purpose: [
+      "Quickly identify and contact the nearest emergency service providers, including Police Stations, Fire Service units, Road Safety agencies, and other relevant responders.",
+      "Alert pre-selected emergency contacts during distress situations, ensuring that loved ones are informed and able to provide support.",
+      "Improve emergency response coordination through accurate location sharing and real-time updates.",
+      "Provide alternative response mechanisms through offline support, particularly in areas with poor or limited internet access.",
+      "Activate help discreetly and silently in situations where openly reaching for a phone or speaking aloud could escalate danger.",
+      "Preserve a tamper-proof record of an incident — video, audio, and location — for legal protection, even if the device is seized, damaged, or destroyed.",
+    ],
+    targetMarkets: [
+      { name: "Government Institutions", detail: "Extends public agency response coverage into low-connectivity areas and provides tamper-proof evidence for prosecutions and accountability." },
+      { name: "Corporate Entities", detail: "Duty-of-care monitoring for field staff, drivers, and executives, with duress protection for cash-handling roles." },
+      { name: "NGOs & Development Organizations", detail: "Field-worker safety and incident documentation in remote, insecure, or low-connectivity operating areas." },
+      { name: "Small-Scale Businesses", detail: "Low-cost, discreet protection for solo traders and POS/agent-banking operators against robbery and forced-transfer scenarios." },
+      { name: "Large-Scale Businesses", detail: "Fleet and driver safety for logistics operators, and estate-wide security integration for real estate developers and community associations." },
+    ],
+    coreFunctionalityIntro: "The platform is intended to:",
+    coreFunctionality: [
+      "Detect and utilize a user's live location to identify nearby emergency services.",
+      "Enable one-touch emergency alerts to trusted contacts.",
+      "Share real-time location updates during emergencies.",
+      "Transmit live audio feeds to designated contacts when activated.",
+      "Facilitate direct communication between users and emergency responders.",
+      "Support offline emergency notifications through local vigilante groups or community security structures.",
+      "Maintain a repository of emergency contacts and response information for quick access.",
+      "Deliver continuous updates to users and their contacts throughout an emergency event.",
+      "Recognize discreet physical or timed triggers — such as a button sequence, a shake, or an unattended countdown — and respond without requiring the user to visibly interact with the app.",
+      "Continuously encrypt and back up video, audio, and GPS logs to a secure cloud vault throughout an active incident.",
+    ],
+    closingStatement: "By combining accessibility, discreet activation, intelligent emergency response features, tamper-proof evidence preservation, and both online and offline support mechanisms, RespondrNG aims to become a dependable safety companion that empowers individuals and strengthens emergency preparedness within communities.",
     cta: "Request Demo",
   },
   {
@@ -149,7 +191,12 @@ export default function Products() {
                 CoreMatrix · {p.category}
                 {p.comingSoon && " · Coming Soon"}
               </p>
-              <h2 className="text-3xl font-extrabold mb-6">{p.title}</h2>
+              <h2 className="text-3xl font-extrabold mb-2">{p.title}</h2>
+              {p.tagline ? (
+                <p className="text-slate-500 italic mb-6">{p.tagline}</p>
+              ) : (
+                <div className="mb-4" />
+              )}
               <MotionButton
                 {...buttonHover}
                 className={`inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold transition-colors ${
@@ -163,6 +210,9 @@ export default function Products() {
             </div>
             <div>
               <p className="text-slate-600 leading-relaxed mb-6">{p.desc}</p>
+              {p.featuresHeading && (
+                <h3 className="text-lg font-bold mb-4">{p.featuresHeading}</h3>
+              )}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
                 {p.features.map((f) => (
                   <div key={f} className="flex items-center gap-2 text-sm font-medium text-slate-700">
@@ -171,6 +221,64 @@ export default function Products() {
                   </div>
                 ))}
               </div>
+
+              {(p.purpose || p.targetMarkets || p.coreFunctionality || p.closingStatement) && (
+                <div className="mt-10 pt-10 border-t border-slate-200 space-y-10">
+                  {p.purpose && (
+                    <div>
+                      <h3 className="text-lg font-bold mb-4">Purpose</h3>
+                      {p.purposeIntro && (
+                        <p className="text-sm text-slate-600 leading-relaxed mb-3">{p.purposeIntro}</p>
+                      )}
+                      <ul className="space-y-3">
+                        {p.purpose.map((item) => (
+                          <li key={item} className="flex items-start gap-2 text-sm text-slate-600 leading-relaxed">
+                            <Check size={16} className="text-brand shrink-0 mt-0.5" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {p.targetMarkets && (
+                    <div>
+                      <h3 className="text-lg font-bold mb-4">Target Markets</h3>
+                      <ul className="space-y-4">
+                        {p.targetMarkets.map((m) => (
+                          <li key={m.name} className="text-sm text-slate-600 leading-relaxed">
+                            <span className="font-semibold text-slate-800">{m.name}: </span>
+                            {m.detail}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {p.coreFunctionality && (
+                    <div>
+                      <h3 className="text-lg font-bold mb-4">Core Functionality</h3>
+                      {p.coreFunctionalityIntro && (
+                        <p className="text-sm text-slate-600 leading-relaxed mb-3">{p.coreFunctionalityIntro}</p>
+                      )}
+                      <ul className="space-y-3">
+                        {p.coreFunctionality.map((item) => (
+                          <li key={item} className="flex items-start gap-2 text-sm text-slate-600 leading-relaxed">
+                            <Check size={16} className="text-brand shrink-0 mt-0.5" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {p.closingStatement && (
+                    <p className="text-sm text-slate-500 leading-relaxed italic">
+                      {p.closingStatement}
+                    </p>
+                  )}
+                </div>
+              )}
             </div>
           </MotionDiv>
         ))}

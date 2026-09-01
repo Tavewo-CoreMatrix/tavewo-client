@@ -50,7 +50,7 @@ const products = [
   {
     label: "Emergency Operations",
     name: "RespondrNG",
-    desc: "Dispatch, GPS tracking, routing, incident management and open APIs.",
+    desc: "Silent SOS activation, live location and audio streaming, and tamper-proof evidence capture — for individuals, teams, and institutions.",
     cta: "Request Demo",
     to: "/products",
   },
