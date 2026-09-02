@@ -45,21 +45,21 @@ const products = [
     name: "Verscar",
     desc: "Work-and-own vehicles, verified drivers, escrow and asset protection.",
     cta: "Learn more",
-    to: "/products",
+    to: "/products#verscar",
   },
   {
     label: "Emergency Operations",
     name: "RespondrNG",
     desc: "Silent SOS activation, live location and audio streaming, and tamper-proof evidence capture — for individuals, teams, and institutions.",
     cta: "Request Demo",
-    to: "/products",
+    to: "/products#respondrng",
   },
   {
     label: "Conversational Learning",
     name: "CorePrep",
     desc: "WhatsApp-native training and exam prep, built for schools, academies and busineses.",
     cta: "Learn more",
-    to: "/products",
+    to: "/products#coreprep",
   },
 ];
 
