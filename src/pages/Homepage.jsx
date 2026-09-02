@@ -17,6 +17,7 @@ import { MotionLink, buttonHover, cardHover, cardHover2, } from "../lib/motion";
 
 const divisions = [
   {
+    slug: "corematrix",
     icon: Cpu,
     name: "CoreMatrix",
     tagline: "AI, automation and enterprise software built for scale.",
@@ -24,6 +25,7 @@ const divisions = [
     image: "/images/CoreMatrix2.jpg",
   },
   {
+    slug: "global-assets-procurement",
     icon: Globe2,
     name: "Global Assets & Procurement",
     tagline: "Asset procurement, importation and real estate.",
@@ -31,6 +33,7 @@ const divisions = [
     image: "/images/divisionpage-global-assets-section2.jpg",
   },
   {
+    slug: "telematics-fleet-operations",
     icon: Truck,
     name: "Fleet Telematics",
     tagline: "Fleet management, verification and emergency operations.",
@@ -45,21 +48,21 @@ const products = [
     name: "Verscar",
     desc: "Work-and-own vehicles, verified drivers, escrow and asset protection.",
     cta: "Learn more",
-    to: "/products",
+    to: "/products#verscar",
   },
   {
     label: "Emergency Operations",
     name: "RespondrNG",
     desc: "Silent SOS activation, live location and audio streaming, and tamper-proof evidence capture — for individuals, teams, and institutions.",
     cta: "Request Demo",
-    to: "/products",
+    to: "/products#respondrng",
   },
   {
     label: "Conversational Learning",
     name: "CorePrep",
     desc: "WhatsApp-native training and exam prep, built for schools, academies and busineses.",
     cta: "Learn more",
-    to: "/products",
+    to: "/products#coreprep",
   },
 ];
 
@@ -238,7 +241,7 @@ export default function Homepage() {
                     </li>
                   ))}
                 </ul>
-                <Link to="/division" className="inline-flex items-center gap-2 hover:gap-3 transition-all font-semibold text-brand text-sm active:gap-3">
+                <Link to={`/division#${d.slug}`} className="inline-flex items-center gap-2 hover:gap-3 transition-all font-semibold text-brand text-sm active:gap-3">
                   Explore Division <ArrowRight size={16} />
                 </Link>
               </div>

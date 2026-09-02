@@ -1,8 +1,10 @@
-import { ArrowRight, Check } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, Check, ChevronDown } from "lucide-react";
 import HeroBanner from "../components/HeroBanner";
 import Reveal from "../components/Reveal";
 import { MotionButton, MotionDiv, buttonHover, cardHover, cardHover2 } from "../lib/motion";
 import { motion } from "framer-motion";
+import useScrollToHash from "../hooks/useScrollToHash";
 
 const gallery = [
   { src: "/images/productpage-image-gallery1.jpg", alt: "Vescar mobility fleet" },
@@ -107,6 +109,7 @@ const products = [
 ];
 
 export default function Products() {
+  useScrollToHash();
   return (
     <div>
       <HeroBanner
@@ -175,114 +178,163 @@ export default function Products() {
       {/* Product cards */}
       <section className="max-w-7xl mx-auto px-5 md:px-8 py-14 md:py-20 space-y-8">
         {products.map((p) => (
-          <MotionDiv
-            key={p.title}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-            {...cardHover2}
-            className={`border rounded-2xl p-6 md:p-10 grid md:grid-cols-[1fr_1.4fr] gap-8 items-start hover:border-brand/70 bg-white ${
-              p.comingSoon ? "border-dashed border-slate-300" : "border-slate-200"
-            }`}
-          >
-            <div>
-              <p className="text-brand font-semibold mb-2">
-                CoreMatrix · {p.category}
-                {p.comingSoon && " · Coming Soon"}
-              </p>
-              <h2 className="text-3xl font-extrabold mb-2">{p.title}</h2>
-              {p.tagline ? (
-                <p className="text-slate-500 italic mb-6">{p.tagline}</p>
-              ) : (
-                <div className="mb-4" />
-              )}
-              <MotionButton
-                {...buttonHover}
-                className={`inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold transition-colors ${
-                  p.comingSoon
-                    ? "border-2 border-brand text-brand hover:bg-brand-light active:bg-brand-light"
-                    : "bg-brand text-white hover:bg-brand-dark active:bg-brand-dark"
-                }`}
-              >
-                {p.cta} <ArrowRight size={18} />
-              </MotionButton>
-            </div>
-            <div>
-              <p className="text-slate-600 leading-relaxed mb-6">{p.desc}</p>
-              {p.featuresHeading && (
-                <h3 className="text-lg font-bold mb-4">{p.featuresHeading}</h3>
-              )}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
-                {p.features.map((f) => (
-                  <div key={f} className="flex items-center gap-2 text-sm font-medium text-slate-700">
-                    <Check size={16} className="text-brand shrink-0" />
-                    {f}
-                  </div>
-                ))}
-              </div>
-
-              {(p.purpose || p.targetMarkets || p.coreFunctionality || p.closingStatement) && (
-                <div className="mt-10 pt-10 border-t border-slate-200 space-y-10">
-                  {p.purpose && (
-                    <div>
-                      <h3 className="text-lg font-bold mb-4">Purpose</h3>
-                      {p.purposeIntro && (
-                        <p className="text-sm text-slate-600 leading-relaxed mb-3">{p.purposeIntro}</p>
-                      )}
-                      <ul className="space-y-3">
-                        {p.purpose.map((item) => (
-                          <li key={item} className="flex items-start gap-2 text-sm text-slate-600 leading-relaxed">
-                            <Check size={16} className="text-brand shrink-0 mt-0.5" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-
-                  {p.targetMarkets && (
-                    <div>
-                      <h3 className="text-lg font-bold mb-4">Target Markets</h3>
-                      <ul className="space-y-4">
-                        {p.targetMarkets.map((m) => (
-                          <li key={m.name} className="text-sm text-slate-600 leading-relaxed">
-                            <span className="font-semibold text-slate-800">{m.name}: </span>
-                            {m.detail}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-
-                  {p.coreFunctionality && (
-                    <div>
-                      <h3 className="text-lg font-bold mb-4">Core Functionality</h3>
-                      {p.coreFunctionalityIntro && (
-                        <p className="text-sm text-slate-600 leading-relaxed mb-3">{p.coreFunctionalityIntro}</p>
-                      )}
-                      <ul className="space-y-3">
-                        {p.coreFunctionality.map((item) => (
-                          <li key={item} className="flex items-start gap-2 text-sm text-slate-600 leading-relaxed">
-                            <Check size={16} className="text-brand shrink-0 mt-0.5" />
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-
-                  {p.closingStatement && (
-                    <p className="text-sm text-slate-500 leading-relaxed italic">
-                      {p.closingStatement}
-                    </p>
-                  )}
-                </div>
-              )}
-            </div>
-          </MotionDiv>
+          <ProductCard key={p.title} p={p} />
         ))}
       </section>
+    </div>
+  );
+}
+
+function ProductCard({ p }) {
+  const slug = p.title.toLowerCase().replace(/\s+/g, "-");
+  const hasRichContent = Boolean(
+    p.purpose || p.targetMarkets || p.coreFunctionality || p.closingStatement
+  );
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <div id={slug} className="scroll-mt-24">
+      <MotionDiv
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+        {...cardHover2}
+        className={`border rounded-2xl p-6 md:p-10 grid md:grid-cols-[1fr_1.4fr] gap-8 items-start hover:border-brand/70 bg-white ${
+          p.comingSoon ? "border-dashed border-slate-300" : "border-slate-200"
+        }`}
+      >
+      <div>
+        <p className="text-brand font-semibold mb-2">
+          CoreMatrix · {p.category}
+          {p.comingSoon && " · Coming Soon"}
+        </p>
+        <h2 className="text-3xl font-extrabold mb-2">{p.title}</h2>
+        {p.tagline ? (
+          <p className="text-slate-500 italic mb-6">{p.tagline}</p>
+        ) : (
+          <div className="mb-4" />
+        )}
+        <MotionButton
+          {...buttonHover}
+          className={`inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold transition-colors ${
+            p.comingSoon
+              ? "border-2 border-brand text-brand hover:bg-brand-light active:bg-brand-light"
+              : "bg-brand text-white hover:bg-brand-dark active:bg-brand-dark"
+          }`}
+        >
+          {p.cta} <ArrowRight size={18} />
+        </MotionButton>
+      </div>
+      <div>
+        <p className="text-slate-600 leading-relaxed mb-0">{p.desc}</p>
+
+        {!hasRichContent && p.features?.length > 0 && (
+          <div className="mt-6">
+            {p.featuresHeading && (
+              <h3 className="text-lg font-bold mb-4">{p.featuresHeading}</h3>
+            )}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
+              {p.features.map((f) => (
+                <div key={f} className="flex items-center gap-2 text-sm font-medium text-slate-700">
+                  <Check size={16} className="text-brand shrink-0" />
+                  {f}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {hasRichContent && expanded && (
+          <div className="mt-6 space-y-10">
+            {p.features?.length > 0 && (
+              <div>
+                {p.featuresHeading && (
+                  <h3 className="text-lg font-bold mb-4">{p.featuresHeading}</h3>
+                )}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
+                  {p.features.map((f) => (
+                    <div key={f} className="flex items-center gap-2 text-sm font-medium text-slate-700">
+                      <Check size={16} className="text-brand shrink-0" />
+                      {f}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {p.purpose && (
+              <div>
+                <h3 className="text-lg font-bold mb-4">Purpose</h3>
+                {p.purposeIntro && (
+                  <p className="text-sm text-slate-600 leading-relaxed mb-3">{p.purposeIntro}</p>
+                )}
+                <ul className="space-y-3">
+                  {p.purpose.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-slate-600 leading-relaxed">
+                      <Check size={16} className="text-brand shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {p.targetMarkets && (
+              <div>
+                <h3 className="text-lg font-bold mb-4">Target Markets</h3>
+                <ul className="space-y-4">
+                  {p.targetMarkets.map((m) => (
+                    <li key={m.name} className="text-sm text-slate-600 leading-relaxed">
+                      <span className="font-semibold text-slate-800">{m.name}: </span>
+                      {m.detail}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {p.coreFunctionality && (
+              <div>
+                <h3 className="text-lg font-bold mb-4">Core Functionality</h3>
+                {p.coreFunctionalityIntro && (
+                  <p className="text-sm text-slate-600 leading-relaxed mb-3">{p.coreFunctionalityIntro}</p>
+                )}
+                <ul className="space-y-3">
+                  {p.coreFunctionality.map((item) => (
+                    <li key={item} className="flex items-start gap-2 text-sm text-slate-600 leading-relaxed">
+                      <Check size={16} className="text-brand shrink-0 mt-0.5" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {p.closingStatement && (
+              <p className="text-sm text-slate-500 leading-relaxed italic">
+                {p.closingStatement}
+              </p>
+            )}
+          </div>
+        )}
+
+        {hasRichContent && (
+          <button
+            type="button"
+            onClick={() => setExpanded((v) => !v)}
+            className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand hover:text-brand-dark"
+            aria-expanded={expanded}
+          >
+            {expanded ? "See Less" : "See More"}
+            <ChevronDown
+              size={16}
+              className={`transition-transform ${expanded ? "rotate-180" : ""}`}
+            />
+          </button>
+        )}
+        </div>
+      </MotionDiv>
     </div>
   );
 }

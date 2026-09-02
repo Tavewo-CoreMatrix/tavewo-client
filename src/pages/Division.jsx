@@ -4,9 +4,11 @@ import Reveal from "../components/Reveal";
 import { MotionButton, buttonHover } from "../lib/motion";
 import {Link} from "react-router-dom";
 import { motion } from "framer-motion";
+import useScrollToHash from "../hooks/useScrollToHash";
 
 const divisions = [
   {
+    slug: "corematrix",
     eyebrow: "Technology & Innovation",
     title: "CoreMatrix",
     desc: "Our enterprise technology arm. CoreMatrix designs, builds and ships AI-powered software and automation platforms used by operators across the group and by external enterprise clients. Each platform is assigned a dedicated product lead accountable for its roadmap and commercial performance, while our engineering team builds, hardens and maintains every platform in production.",
@@ -15,6 +17,7 @@ const divisions = [
     imageFirst: true,
   },
   {
+    slug: "global-assets-procurement",
     eyebrow: "Physical Assets & Real Estate",
     title: "Global Assets & Procurement",
     desc: "The physical asset and procurement engine of the group. We source, procure and manage physical assets — vehicles, equipment and premium real estate through direct manufacturer sourcing, import logistics and structured property acquisition.",
@@ -23,6 +26,7 @@ const divisions = [
     imageFirst: false,
   },
   {
+    slug: "telematics-fleet-operations",
     eyebrow: "Logistics & Emergency",
     title: "Telematics & Tactical Fleet Operations",
     desc: "Nationwide logistics, verification and emergency operations. From fleet management to asset recovery and dispatch, we deliver the physical layer of the ecosystem.",
@@ -33,6 +37,7 @@ const divisions = [
 ];
 
 export default function Division() {
+  useScrollToHash();
   return (
     <div>
       <HeroBanner
@@ -42,7 +47,7 @@ export default function Division() {
       />
 
       {divisions.map((d) => (
-        <section key={d.title} className="max-w-7xl mx-auto px-5 md:px-8 py-14 md:py-20">
+        <section key={d.title} id={d.slug} className="scroll-mt-24 max-w-7xl mx-auto px-5 md:px-8 py-14 md:py-20">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <Reveal y={30} className={d.imageFirst ? "md:order-1" : "md:order-2"}>
               <motion.img
