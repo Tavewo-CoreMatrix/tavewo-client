@@ -1,4 +1,6 @@
 import { ArrowRight, Check } from "lucide-react";
+import { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 import HeroBanner from "../components/HeroBanner";
 import Reveal from "../components/Reveal";
 import { MotionButton, MotionDiv, buttonHover, cardHover, cardHover2 } from "../lib/motion";
@@ -12,10 +14,11 @@ const gallery = [
 
 const products = [
   {
+    id: "respondrng",
     category: "Emergency Operations Platform",
     title: "RespondrNG",
     tagline: "Silent when danger is watching. Unstoppable when help is needed.",
-    desc: "RespondrNG is an innovative emergency response and personal safety mobile application designed to provide individuals with immediate access to help during emergencies. The platform leverages location-based technology, real-time communication, discreet activation methods, and intelligent alert systems to bridge the gap between people in distress, emergency service providers, and trusted contacts. Its mission is to improve response times, enhance public safety, and ensure that users can quickly and — when necessary, silently — access assistance and preserve evidence of an incident, regardless of their location or internet connectivity.",
+    desc: "RespondrNG is an innovative emergency response and personal safety mobile application designed to provide individuals with immediate access to help during emergencies. The platform leve[...]",
     featuresHeading: "Key Features",
     features: [
       "Location-Based Emergency Service Finder",
@@ -59,13 +62,14 @@ const products = [
       "Support offline emergency notifications through local vigilante groups or community security structures.",
       "Maintain a repository of emergency contacts and response information for quick access.",
       "Deliver continuous updates to users and their contacts throughout an emergency event.",
-      "Recognize discreet physical or timed triggers — such as a button sequence, a shake, or an unattended countdown — and respond without requiring the user to visibly interact with the app.",
+      "Recognize discreet physical or timed triggers — such as a button sequence, a shake, or an unattended countdown — and respond without requiring the user to visibly interact with the app.[...]",
       "Continuously encrypt and back up video, audio, and GPS logs to a secure cloud vault throughout an active incident.",
     ],
-    closingStatement: "By combining accessibility, discreet activation, intelligent emergency response features, tamper-proof evidence preservation, and both online and offline support mechanisms, RespondrNG aims to become a dependable safety companion that empowers individuals and strengthens emergency preparedness within communities.",
+    closingStatement: "By combining accessibility, discreet activation, intelligent emergency response features, tamper-proof evidence preservation, and both online and offline support mechanisms,[...]",
     cta: "Request Demo",
   },
   {
+    id: "coreprep",
     category: "Conversational Training-as-a-Service",
     title: "CorePrep",
     desc: "WhatsApp-native training and assessment engine. Exam prep for students, multi-tenant training tracks for schools, academies and businesses — no app download required.",
@@ -78,10 +82,11 @@ const products = [
     cta: "Try CorePrep",
   },
   {
+    id: "verscar",
     category: "Mobility Marketplace",
     comingSoon: true,
     title: "VERSCAR",
-    desc: "The work-and-own mobility marketplace, launching soon. VERSCAR will connect vehicle owners, drivers and operators  through verified onboarding, escrow-backed transactions and asset protection.",
+    desc: "The work-and-own mobility marketplace, launching soon. VERSCAR will connect vehicle owners, drivers and operators  through verified onboarding, escrow-backed transactions and asset prot[...]",
     features: [
       "Work-and-Own Marketplace",
       "Vehicle Rentals",
@@ -92,6 +97,7 @@ const products = [
     cta: "Coming Soon",
   },
   {
+    id: "tavelink",
     category: "Professional Network",
     comingSoon: true,
     title: "TaveLink",
@@ -107,6 +113,46 @@ const products = [
 ];
 
 export default function Products() {
+  const location = useLocation();
+  const targetRef = useRef(null);
+  const highlightTimeoutRef = useRef(null);
+
+  useEffect(() => {
+    // Extract hash from URL
+    const hash = location.hash.slice(1).toLowerCase();
+
+    if (hash) {
+      // Find the product with matching id
+      const productElement = document.getElementById(hash);
+
+      if (productElement) {
+        // Small delay to ensure DOM is ready
+        setTimeout(() => {
+          // Scroll to element
+          productElement.scrollIntoView({ behavior: "smooth", block: "start" });
+
+          // Add highlight animation
+          productElement.classList.add("ring-2", "ring-brand", "ring-offset-2", "rounded-2xl");
+
+          // Remove highlight after 3 seconds
+          if (highlightTimeoutRef.current) {
+            clearTimeout(highlightTimeoutRef.current);
+          }
+
+          highlightTimeoutRef.current = setTimeout(() => {
+            productElement.classList.remove("ring-2", "ring-brand", "ring-offset-2");
+          }, 3000);
+        }, 100);
+      }
+    }
+
+    return () => {
+      if (highlightTimeoutRef.current) {
+        clearTimeout(highlightTimeoutRef.current);
+      }
+    };
+  }, [location.hash]);
+
   return (
     <div>
       <HeroBanner
@@ -177,12 +223,13 @@ export default function Products() {
         {products.map((p) => (
           <MotionDiv
             key={p.title}
+            id={p.id}
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             {...cardHover2}
-            className={`border rounded-2xl p-6 md:p-10 grid md:grid-cols-[1fr_1.4fr] gap-8 items-start hover:border-brand/70 bg-white ${
+            className={`border rounded-2xl p-6 md:p-10 grid md:grid-cols-[1fr_1.4fr] gap-8 items-start hover:border-brand/70 bg-white transition-all ${
               p.comingSoon ? "border-dashed border-slate-300" : "border-slate-200"
             }`}
           >
