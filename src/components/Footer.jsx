@@ -53,11 +53,11 @@ const companyLinks = [
 ];
 
 const ecosystemLinks = [
-  { label: "VERSCAR", to: "/products" },
-  { label: "RespondrNG", to: "/products" },
-  { label: "CorePrep", to: "/products" },
-  { label: "TaveLink", to: "/products" },
-  { label: "Technology", to: "/division" },
+  { label: "VERSCAR", to: "/products#verscar" },
+  { label: "RespondrNG", to: "/products#respondrng" },
+  { label: "CorePrep", to: "/products#coreprep" },
+  { label: "TaveLink", to: "/products#tavelink" },
+  { label: "Technology", to: "/division#corematrix" },
 ];
 
 export default function Footer() {
