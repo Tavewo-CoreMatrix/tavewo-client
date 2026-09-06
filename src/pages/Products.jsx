@@ -8,16 +8,16 @@ import useScrollToHash from "../hooks/useScrollToHash";
 
 const gallery = [
   { src: "/images/productpage-image-gallery1.jpg", alt: "Vescar mobility fleet" },
-  { src: "/images/productpage-image-gallery2.jpg", alt: "RespondrNG emergency operations" },
+  { src: "/images/productpage-image-gallery2.jpg", alt: "RespondR emergency operations" },
   { src: "/images/productpage-image-gallery3.jpg", alt: "TAVEWO Capital real estate" },
 ];
 
 const products = [
   {
     category: "Emergency Operations Platform",
-    title: "RespondrNG",
+    title: "RespondR",
     tagline: "Silent when danger is watching. Unstoppable when help is needed.",
-    desc: "RespondrNG is an innovative emergency response and personal safety mobile application designed to provide individuals with immediate access to help during emergencies. The platform leverages location-based technology, real-time communication, discreet activation methods, and intelligent alert systems to bridge the gap between people in distress, emergency service providers, and trusted contacts. Its mission is to improve response times, enhance public safety, and ensure that users can quickly and — when necessary, silently — access assistance and preserve evidence of an incident, regardless of their location or internet connectivity.",
+    desc: "RespondR is an innovative emergency response and personal safety mobile application designed to provide individuals with immediate access to help during emergencies. The platform leverages location-based technology, real-time communication, discreet activation methods, and intelligent alert systems to bridge the gap between people in distress, emergency service providers, and trusted contacts. Its mission is to improve response times, enhance public safety, and ensure that users can quickly and — when necessary, silently — access assistance and preserve evidence of an incident, regardless of their location or internet connectivity.",
     featuresHeading: "Key Features",
     features: [
       "Location-Based Emergency Service Finder",
@@ -35,7 +35,7 @@ const products = [
       "Tamper-Proof Cloud Evidence Vault",
       "Duress PIN (Bad Actor / Extortion Protocol)",
     ],
-    purposeIntro: "RespondrNG is built to address the challenges individuals face in accessing timely emergency support. The application empowers users to:",
+    purposeIntro: "RespondR is built to address the challenges individuals face in accessing timely emergency support. The application empowers users to:",
     purpose: [
       "Quickly identify and contact the nearest emergency service providers, including Police Stations, Fire Service units, Road Safety agencies, and other relevant responders.",
       "Alert pre-selected emergency contacts during distress situations, ensuring that loved ones are informed and able to provide support.",
@@ -64,7 +64,7 @@ const products = [
       "Recognize discreet physical or timed triggers — such as a button sequence, a shake, or an unattended countdown — and respond without requiring the user to visibly interact with the app.",
       "Continuously encrypt and back up video, audio, and GPS logs to a secure cloud vault throughout an active incident.",
     ],
-    closingStatement: "By combining accessibility, discreet activation, intelligent emergency response features, tamper-proof evidence preservation, and both online and offline support mechanisms, RespondrNG aims to become a dependable safety companion that empowers individuals and strengthens emergency preparedness within communities.",
+    closingStatement: "By combining accessibility, discreet activation, intelligent emergency response features, tamper-proof evidence preservation, and both online and offline support mechanisms, RespondR aims to become a dependable safety companion that empowers individuals and strengthens emergency preparedness within communities.",
     cta: "Request Demo",
   },
   {
