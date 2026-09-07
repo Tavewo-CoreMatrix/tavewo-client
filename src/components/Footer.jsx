@@ -54,7 +54,7 @@ const companyLinks = [
 
 const ecosystemLinks = [
   { label: "VERSCAR", to: "/products#verscar" },
-  { label: "RespondrNG", to: "/products#respondrng" },
+  { label: "RespondR", to: "/products#respondr" },
   { label: "CorePrep", to: "/products#coreprep" },
   { label: "TaveLink", to: "/products#tavelink" },
   { label: "Technology", to: "/division#corematrix" },

@@ -117,16 +117,16 @@ const articles = [
     ],
   },
   {
-    slug: "respondrng-app-launching-soon",
-    title: "RespondrNG App Launching Soon on Google Play Store.",
+    slug: "respondr-app-launching-soon",
+    title: "RespondR App Launching Soon on Google Play Store.",
     category: "Technology news",
-    image: "/images/RESPONDRNG.jpg",
+    image: "/images/RespondR.jpg",
     publishedAt: "2026-08-26",
-    excerpt:"RespondrNG, TAVEWO Ventures' emergency response and public safety platform, will officially launch on the Google Play Store on September 30, 2026.",
+    excerpt:"RespondR, TAVEWO Ventures' emergency response and public safety platform, will officially launch on the Google Play Store on September 30, 2026.",
     content: [
-      "TAVEWO Ventures has announced the official launch date for RespondrNG, its technology-driven emergency response and public safety application, which will be available for download on the Google Play Store starting September 30, 2026.",
-      "RespondrNG is designed to help individuals and communities respond faster during emergencies by connecting users with nearby emergency services, trusted contacts, and real-time location-based assistance through a secure and intuitive mobile experience.",
-      "The launch marks a major milestone in TAVEWO Ventures' mission to build technology solutions that improve safety, mobility, and everyday life across Nigeria. The initial Android release will make RespondrNG accessible to users nationwide, with additional platform enhancements and future releases already in the product roadmap.",
+      "TAVEWO Ventures has announced the official launch date for RespondR, its technology-driven emergency response and public safety application, which will be available for download on the Google Play Store starting September 30, 2026.",
+      "RespondR is designed to help individuals and communities respond faster during emergencies by connecting users with nearby emergency services, trusted contacts, and real-time location-based assistance through a secure and intuitive mobile experience.",
+      "The launch marks a major milestone in TAVEWO Ventures' mission to build technology solutions that improve safety, mobility, and everyday life across Nigeria. The initial Android release will make RespondR accessible to users nationwide, with additional platform enhancements and future releases already in the product roadmap.",
       "As the countdown to launch begins, TAVEWO Ventures encourages users to stay connected through its official channels for launch updates, feature announcements, and early onboarding information ahead of September 30, 2026."
     ],
   },
