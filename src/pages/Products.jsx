@@ -14,6 +14,7 @@ const gallery = [
 
 const products = [
   {
+    id: "respondrng",
     category: "Emergency Operations Platform",
     title: "RespondR",
     tagline: "Silent when danger is watching. Unstoppable when help is needed.",
@@ -61,13 +62,14 @@ const products = [
       "Support offline emergency notifications through local vigilante groups or community security structures.",
       "Maintain a repository of emergency contacts and response information for quick access.",
       "Deliver continuous updates to users and their contacts throughout an emergency event.",
-      "Recognize discreet physical or timed triggers — such as a button sequence, a shake, or an unattended countdown — and respond without requiring the user to visibly interact with the app.",
+      "Recognize discreet physical or timed triggers — such as a button sequence, a shake, or an unattended countdown — and respond without requiring the user to visibly interact with the app.[...]",
       "Continuously encrypt and back up video, audio, and GPS logs to a secure cloud vault throughout an active incident.",
     ],
     closingStatement: "By combining accessibility, discreet activation, intelligent emergency response features, tamper-proof evidence preservation, and both online and offline support mechanisms, RespondR aims to become a dependable safety companion that empowers individuals and strengthens emergency preparedness within communities.",
     cta: "Request Demo",
   },
   {
+    id: "coreprep",
     category: "Conversational Training-as-a-Service",
     title: "CorePrep",
     desc: "WhatsApp-native training and assessment engine. Exam prep for students, multi-tenant training tracks for schools, academies and businesses — no app download required.",
@@ -80,10 +82,11 @@ const products = [
     cta: "Try CorePrep",
   },
   {
+    id: "verscar",
     category: "Mobility Marketplace",
     comingSoon: true,
     title: "VERSCAR",
-    desc: "The work-and-own mobility marketplace, launching soon. VERSCAR will connect vehicle owners, drivers and operators  through verified onboarding, escrow-backed transactions and asset protection.",
+    desc: "The work-and-own mobility marketplace, launching soon. VERSCAR will connect vehicle owners, drivers and operators  through verified onboarding, escrow-backed transactions and asset prot[...]",
     features: [
       "Work-and-Own Marketplace",
       "Vehicle Rentals",
@@ -94,6 +97,7 @@ const products = [
     cta: "Coming Soon",
   },
   {
+    id: "tavelink",
     category: "Professional Network",
     comingSoon: true,
     title: "TaveLink",
