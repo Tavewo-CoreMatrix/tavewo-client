@@ -19,7 +19,7 @@ const products = [
     category: "Emergency Operations Platform",
     title: "RespondR",
     tagline: "Silent when danger is watching. Unstoppable when help is needed.",
-    desc: "RespondR is an innovative emergency response and personal safety mobile application designed to provide individuals with immediate access to help during emergencies. The platform leverages [...]
+    desc: "RespondR is an innovative emergency response and personal safety mobile application designed to provide individuals with immediate access to help during emergencies. The platform leverages location-based technology, real-time communication, discreet activation methods, and intelligent alert systems to bridge the gap between people in distress, emergency service providers, and trusted contacts. Its mission is to improve response times, enhance public safety, and ensure that users can quickly and — when necessary, silently — access assistance and preserve evidence of an incident, regardless of their location or internet connectivity.",
     featuresHeading: "Key Features",
     features: [
       "Location-Based Emergency Service Finder",
@@ -63,10 +63,10 @@ const products = [
       "Support offline emergency notifications through local vigilante groups or community security structures.",
       "Maintain a repository of emergency contacts and response information for quick access.",
       "Deliver continuous updates to users and their contacts throughout an emergency event.",
-      "Recognize discreet physical or timed triggers — such as a button sequence, a shake, or an unattended countdown — and respond without requiring the user to visibly interact with the app.[...[...]
+      "Recognize discreet physical or timed triggers — such as a button sequence, a shake, or an unattended countdown — and respond without requiring the user to visibly interact with the app.",
       "Continuously encrypt and back up video, audio, and GPS logs to a secure cloud vault throughout an active incident.",
     ],
-    closingStatement: "By combining accessibility, discreet activation, intelligent emergency response features, tamper-proof evidence preservation, and both online and offline support mechanisms, Res[...]
+    closingStatement: "By combining accessibility, discreet activation, intelligent emergency response features, tamper-proof evidence preservation, and both online and offline support mechanisms, RespondR delivers a comprehensive emergency safety solution tailored to diverse user needs and operational environments.",
     cta: "Request Demo",
   },
   {
@@ -87,7 +87,7 @@ const products = [
     category: "Mobility Marketplace",
     comingSoon: true,
     title: "VERSCAR",
-    desc: "The work-and-own mobility marketplace, launching soon. VERSCAR will connect vehicle owners, drivers and operators  through verified onboarding, escrow-backed transactions and asset prot[...[...]
+    desc: "The work-and-own mobility marketplace, launching soon. VERSCAR will connect vehicle owners, drivers and operators through verified onboarding, escrow-backed transactions and asset protection mechanisms.",
     features: [
       "Work-and-Own Marketplace",
       "Vehicle Rentals",
@@ -102,7 +102,7 @@ const products = [
     category: "Professional Network",
     comingSoon: true,
     title: "TaveLink",
-    desc: "TAVEWO's upcoming professional network  and job-matching platform — connecting enterprise talents across Nigeria and beyond.",
+    desc: "TAVEWO's upcoming professional network and job-matching platform — connecting enterprise talents across Nigeria and beyond.",
     features: [
       "Verified Professional Profiles",
       "Proximity-Based Matching",
