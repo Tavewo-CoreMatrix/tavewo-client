@@ -54,8 +54,8 @@ const products = [
     label: "Emergency Operations",
     name: "RespondR",
     desc: "Silent SOS activation, live location and audio streaming, and tamper-proof evidence capture — for individuals, teams, and institutions.",
-    cta: "Request Demo",
-    to: "/products#respondrng",
+    cta: "Learn more",
+    to: "/products#respondr",
   },
   {
     label: "Conversational Learning",
