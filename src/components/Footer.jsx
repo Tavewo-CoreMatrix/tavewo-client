@@ -50,6 +50,7 @@ const companyLinks = [
   { label: "Products", to: "/products" },
   { label: "Partnerships", to: "/partnerships" },
   { label: "News & Insight", to: "/news" },
+  { label: "RespondR Privacy Policy", to: "/respondr/privacy" },
 ];
 
 const ecosystemLinks = [
