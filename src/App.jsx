@@ -11,6 +11,7 @@ import News from "./pages/News";
 import NewsArticle from "./pages/NewsArticle";
 import ContactUs from "./pages/ContactUs";
 import AdminContacts from "./pages/AdminContacts";
+import RespondrPrivacy from "./pages/RespondrPrivacy";
 import Lenis from "lenis";
 import { useEffect } from "react";
 
@@ -51,6 +52,7 @@ function App() {
             <Route path="/news/:slug" element={<NewsArticle />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/admin/contacts" element={<AdminContacts />} />
+            <Route path="/respondr/privacy" element={<RespondrPrivacy />} />
           </Routes>
         </main>
         <Footer />
