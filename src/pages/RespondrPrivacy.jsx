@@ -29,7 +29,7 @@ export default function RespondrPrivacy() {
     <div>
       <HeroBanner
         eyebrow="TAVEWO Ventures Ltd."
-        title="RespondR Privacy & Recording Policy"
+        title="respondRalert Privacy & Recording Policy"
         subtitle="Last Updated: September 2026"
       />
 
@@ -37,7 +37,7 @@ export default function RespondrPrivacy() {
         <Reveal>
           <div className="border-l-4 border-brand bg-brand-light rounded-r-xl px-5 py-4 md:px-6 md:py-5 mb-12">
             <p className="text-slate-700 leading-relaxed">
-              Please read these terms before using RespondR. By creating an account or continuing to use the app, you acknowledge and agree to the terms outlined in this policy.
+              Please read these terms before using respondRalert. By creating an account or continuing to use the app, you acknowledge and agree to the terms outlined in this policy.
             </p>
           </div>
         </Reveal>
@@ -48,10 +48,10 @@ export default function RespondrPrivacy() {
               <SectionHeading number="1" title="Overview & Privacy Principles" />
               <div className="space-y-4 text-slate-600 leading-relaxed">
                 <p>
-                  RespondR is operated by TAVEWO Ventures Ltd. We respect your privacy and protect your personal information in accordance with applicable Nigerian laws, including the Nigeria Data Protection Act (NDPA), 2023.
+                  respondRalert is operated by TAVEWO Ventures Ltd. We respect your privacy and protect your personal information in accordance with applicable Nigerian laws, including the Nigeria Data Protection Act (NDPA), 2023.
                 </p>
                 <p>
-                  Depending on the features you use, we may collect your name, contact details, emergency contacts, medical information, real-time location data, SOS trigger history, and audio recordings. We use this information solely to provide, operate, and improve RespondR&apos;s personal safety and emergency services. We do not sell your personal information to third parties.
+                  Depending on the features you use, we may collect your name, contact details, emergency contacts, medical information, real-time location data, SOS trigger history, and audio recordings. We use this information solely to provide, operate, and improve respondRalert&apos;s personal safety and emergency services. We do not sell your personal information to third parties.
                 </p>
                 <p>
                   Section 37 of the Constitution of the Federal Republic of Nigeria, 1999 (as amended), guarantees and protects the privacy of citizens, and we are committed to upholding these constitutional protections.
@@ -66,7 +66,7 @@ export default function RespondrPrivacy() {
               <Subheading>2.1 Recording Public Officials</Subheading>
               <div className="space-y-4 text-slate-600 leading-relaxed">
                 <p>
-                  RespondR allows users to record audio for personal safety, emergency documentation, evidence preservation, and mutual accountability. This includes recording during police stops, searches, traffic stops, or other public-safety incidents, where legally permitted.
+                  respondRalert allows users to record audio for personal safety, emergency documentation, evidence preservation, and mutual accountability. This includes recording during police stops, searches, traffic stops, or other public-safety incidents, where legally permitted.
                 </p>
                 <blockquote className="border-l-4 border-brand bg-slate-50 rounded-r-xl px-5 py-4 text-slate-700 italic">
                   Section 39(1) of the Constitution provides that: &quot;Every person shall be entitled to freedom of expression, including freedom to hold opinions and to receive and impart ideas and information without interference.&quot;
@@ -124,7 +124,7 @@ export default function RespondrPrivacy() {
             <section>
               <SectionHeading number="5" title="Automated Decision-Making" />
               <p className="text-slate-600 leading-relaxed">
-                Certain RespondR features may use automated processing — for example, to help classify the severity of an incident or route an alert to the nearest available responder. Where automated processing produces a decision with significant effects on you, you have the right to request human review of that decision, subject to applicable law.
+                Certain respondRalert features may use automated processing — for example, to help classify the severity of an incident or route an alert to the nearest available responder. Where automated processing produces a decision with significant effects on you, you have the right to request human review of that decision, subject to applicable law.
               </p>
             </section>
           </Reveal>
@@ -133,7 +133,7 @@ export default function RespondrPrivacy() {
             <section>
               <SectionHeading number="6" title="Age Eligibility & Minor Privacy" />
               <p className="text-slate-600 leading-relaxed">
-                RespondR is intended for users who are at least 18 years of age. Individuals between the ages of 13 and 17 may use RespondR only with the explicit consent and supervision of a parent or legal guardian. We do not knowingly collect personal data from children under 13 years of age without verifiable parental consent, in compliance with the Nigeria Data Protection Act, 2023.
+                respondRalert is intended for users who are at least 18 years of age. Individuals between the ages of 13 and 17 may use respondRalert only with the explicit consent and supervision of a parent or legal guardian. We do not knowingly collect personal data from children under 13 years of age without verifiable parental consent, in compliance with the Nigeria Data Protection Act, 2023.
               </p>
             </section>
           </Reveal>
@@ -142,7 +142,7 @@ export default function RespondrPrivacy() {
             <section>
               <SectionHeading number="7" title="Third-Party Sharing & Service Providers" />
               <p className="text-slate-600 leading-relaxed mb-5">
-                To deliver essential emergency functionality, RespondR may share limited data with verified third-party infrastructure providers under strict confidentiality obligations:
+                To deliver essential emergency functionality, respondRalert may share limited data with verified third-party infrastructure providers under strict confidentiality obligations:
               </p>
               <InfoList items={[
                 ["Cloud Infrastructure & Storage Providers", "For encrypted hosting of recordings and telemetry (see Section 4 on cross-border transfers)."],
@@ -155,11 +155,11 @@ export default function RespondrPrivacy() {
           <Reveal>
             <section>
               <SectionHeading number="8" title="User Responsibilities" />
-              <p className="text-slate-600 leading-relaxed mb-5">As a user of RespondR, you must:</p>
+              <p className="text-slate-600 leading-relaxed mb-5">As a user of respondRalert, you must:</p>
               <BulletList items={[
                 "Provide accurate and up-to-date personal and emergency contact information;",
                 "Maintain the confidentiality and security of your account credentials;",
-                "Use RespondR lawfully, responsibly, and ethically;",
+                "Use respondRalert lawfully, responsibly, and ethically;",
                 "Obtain prior consent from individuals you list as designated emergency contacts;",
                 "Avoid obstructing or interfering with emergency responders or law-enforcement officers;",
                 "Respect the fundamental privacy and safety rights of others; and",
@@ -173,7 +173,7 @@ export default function RespondrPrivacy() {
               <SectionHeading number="9" title="Service Limitations" />
               <div className="space-y-4 text-slate-600 leading-relaxed">
                 <p>
-                  RespondR is a personal safety enablement tool and does not constitute a replacement for official state emergency services, a medical device, or a guarantee of personal physical safety.
+                  respondRalert is a personal safety enablement tool and does not constitute a replacement for official state emergency services, a medical device, or a guarantee of personal physical safety.
                 </p>
                 <p>
                   App features rely on third-party dependencies, including your mobile device hardware, battery level, cellular network coverage, GPS accuracy, and third-party API availability. In an immediate life-threatening emergency, always attempt to contact official local emergency services directly wherever possible.
@@ -188,7 +188,7 @@ export default function RespondrPrivacy() {
               <p className="text-slate-600 leading-relaxed mb-5">Under the Nigeria Data Protection Act (NDPA), 2023, you have the right to:</p>
               <BulletList items={rights} />
               <p className="text-slate-600 leading-relaxed mt-6">
-                You can access, correct, or delete most of your information directly within the RespondR app (Settings → Delete Account for full account and data deletion). We respond to all other verified data subject requests within 30 calendar days.
+                You can access, correct, or delete most of your information directly within the respondRalert app (Settings → Delete Account for full account and data deletion). We respond to all other verified data subject requests within 30 calendar days.
               </p>
 
               <div className="mt-8 rounded-2xl bg-navy text-white p-6 md:p-8">
@@ -210,7 +210,7 @@ export default function RespondrPrivacy() {
               <SectionHeading number="11" title="Governing Law & Disputes" />
               <div className="space-y-4 text-slate-600 leading-relaxed">
                 <p>This policy is governed by the laws of the Federal Republic of Nigeria. Any disputes arising from this policy are subject to the exclusive jurisdiction of the courts of Oyo State, Nigeria.</p>
-                <p>We may update this policy periodically. Continued use of RespondR following any notice of update constitutes acceptance of the revised terms to the fullest extent permitted by law.</p>
+                <p>We may update this policy periodically. Continued use of respondRalert following any notice of update constitutes acceptance of the revised terms to the fullest extent permitted by law.</p>
               </div>
             </section>
           </Reveal>

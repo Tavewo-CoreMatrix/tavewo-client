@@ -50,12 +50,12 @@ const companyLinks = [
   { label: "Products", to: "/products" },
   { label: "Partnerships", to: "/partnerships" },
   { label: "News & Insight", to: "/news" },
-  { label: "RespondR Privacy Policy", to: "/respondr/privacy" },
+  { label: "respondRalert Privacy Policy", to: "/respondr/privacy" },
 ];
 
 const ecosystemLinks = [
   { label: "VERSCAR", to: "/products#verscar" },
-  { label: "RespondR", to: "/products#respondr" },
+  { label: "respondRalert", to: "/products#respondralert" },
   { label: "CorePrep", to: "/products#coreprep" },
   { label: "TaveLink", to: "/products#tavelink" },
   { label: "Technology", to: "/division#corematrix" },
