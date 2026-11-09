@@ -3,7 +3,8 @@ import HeroBanner from "../components/HeroBanner";
 import CtaBanner from "../components/CtaBanner";
 import Reveal, { StaggerGroup, staggerItem } from "../components/Reveal";
 import { MotionDiv, cardHover, cardHover2 } from "../lib/motion";
-import { motion } from "framer-motion";
+import { animate, motion, useInView, useMotionValue, useMotionValueEvent } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 
 const whyChoose = [
   {
@@ -35,6 +36,33 @@ const leadership = [
   { role: "Peace Nwaoha", dept: "Asset & Operations Manager, Head of Telematics & Tactical Fleet Ops", image: "/images/AOM-fleet-ops.jpg" },
   { role: "Morayo J. Egbayelo", dept: "Principal UI/UX Solution Architect", image: "/images/designer-uiux.jpg" },
 ];
+
+function AnimatedStatValue({ value }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.5 });
+  const count = useMotionValue(0);
+  const [displayValue, setDisplayValue] = useState(0);
+  const target = Number.parseInt(value, 10);
+  const suffix = value.slice(String(target).length);
+
+  useMotionValueEvent(count, "change", (latest) => {
+    setDisplayValue(Math.round(latest));
+  });
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    const animation = animate(count, target, { duration: 1.5, ease: "easeOut" });
+    return () => animation.stop();
+  }, [count, isInView, target]);
+
+  return (
+    <motion.span ref={ref}>
+      {displayValue}
+      {suffix}
+    </motion.span>
+  );
+}
 
 export default function About() {
   return (
@@ -121,7 +149,9 @@ export default function About() {
               variants={staggerItem}
               className={`${i > 0 ? "md:border-l md:border-white/15 md:pl-8" : ""}`}
             >
-              <p className="text-3xl md:text-4xl font-extrabold mb-1">{s.value}</p>
+              <p className="text-3xl md:text-4xl font-extrabold mb-1">
+                {i === 0 || i === 2 ? <AnimatedStatValue value={s.value} /> : s.value}
+              </p>
               <p className="text-slate-300 text-sm">{s.label}</p>
             </MotionDiv>
           ))}

@@ -51,6 +51,7 @@ const companyLinks = [
   { label: "Partnerships", to: "/partnerships" },
   { label: "News & Insight", to: "/news" },
   { label: "respondRalert Privacy Policy", to: "/respondr/privacy" },
+  { label: "respondRalert Delete Account", to: "/respondr/delete-account" },
 ];
 
 const ecosystemLinks = [
