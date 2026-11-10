@@ -54,7 +54,7 @@ const collectedInfo = [
   ],
   [
     "Referral code",
-    "If you enter a referral code when you sign up, we record it to measure our referral programme and pay the referring partner",
+    "If you enter a referral code during registration, we associate it with your account to track referrals, measure programme performance and calculate partner commissions. Referral codes cannot be changed after account creation",
     "Optional",
   ],
 ];
@@ -65,7 +65,7 @@ export default function RespondrPrivacy() {
       <HeroBanner
         eyebrow="TAVEWO Ventures Ltd."
         title="respondRalert Privacy Policy"
-        subtitle="Last updated: 8 November 2026"
+        subtitle="Last updated: 10 November 2026"
       />
 
       <main className="max-w-4xl mx-auto px-5 md:px-8 py-12 md:py-20">
@@ -159,9 +159,9 @@ export default function RespondrPrivacy() {
                     protections.
                   </>,
                   <>
-                    <strong className="text-navy">Referral partners</strong> only ever receive total numbers (for
-                    example, how many people signed up with their code in a week). They never receive your name,
-                    contact details, location or any other personal information.
+                    <strong className="text-navy">Referral partners</strong> may receive aggregated referral statistics only
+                    (for example, how many people signed up with their code in a week). We will never disclose your
+                    name, contact details, location or any other personal information to them.
                   </>,
                   <>
                     <strong className="text-navy">Authorities</strong>, only where the law requires us to disclose
