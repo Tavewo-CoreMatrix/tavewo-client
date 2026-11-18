@@ -11,6 +11,7 @@ import News from "./pages/News";
 import NewsArticle from "./pages/NewsArticle";
 import ContactUs from "./pages/ContactUs";
 import AdminContacts from "./pages/AdminContacts";
+import CoreMatrixLanding from "./pages/CoreMatrixLanding";
 import RespondrPrivacy from "./pages/RespondrPrivacy";
 import RespondrDeleteAccount from "./pages/RespondrDeleteAccount";
 import Lenis from "lenis"
@@ -52,6 +53,7 @@ function App() {
             <Route path="/news" element={<News />} />
             <Route path="/news/:slug" element={<NewsArticle />} />
             <Route path="/contact" element={<ContactUs />} />
+            <Route path="/corematrix" element={<CoreMatrixLanding />} />
             <Route path="/admin/contacts" element={<AdminContacts />} />
             <Route path="/respondr/privacy" element={<RespondrPrivacy />} />
             <Route path="/respondr/delete-account" element={<RespondrDeleteAccount />} />

@@ -1,7 +1,19 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Lock, Mail, Phone, Building2, RefreshCw, Download, Trash2 } from "lucide-react";
-import { fetchContactSubmissions, deleteContactSubmission } from "../lib/api";
+import { fetchContactSubmissions, deleteContactSubmission, updateContactSubmission } from "../lib/api";
+
+const SOURCE_LABELS = { "corematrix-landing": "CoreMatrix landing page", contact: "Contact Us page" };
+const sourceLabel = (s) => SOURCE_LABELS[s.source || "contact"] || s.source;
+const campaignLabel = (s) => [s.utm?.source, s.utm?.medium, s.utm?.campaign].filter(Boolean).join(" / ");
+const DAY_MS = 24 * 60 * 60 * 1000;
+const isOverdue = (s) => (s.status || "new") === "new" && Date.now() - new Date(s.createdAt).getTime() > DAY_MS;
+const FILTERS = [
+  { id: "all", label: "All" },
+  { id: "corematrix-landing", label: "CoreMatrix landing" },
+  { id: "contact", label: "Contact Us" },
+  { id: "new", label: "Not contacted yet" },
+];
 
 function formatDate(dateStr) {
   return new Date(dateStr).toLocaleString("en-US", {
@@ -20,6 +32,27 @@ export default function AdminContacts() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [deletingId, setDeletingId] = useState(null);
+  const [filter, setFilter] = useState("all");
+
+  const shown = useMemo(
+    () =>
+      submissions.filter((s) => {
+        if (filter === "all") return true;
+        if (filter === "new") return (s.status || "new") === "new";
+        return (s.source || "contact") === filter;
+      }),
+    [submissions, filter]
+  );
+  const overdueCount = submissions.filter(isOverdue).length;
+
+  const handleStatus = async (id, status) => {
+    try {
+      const updated = await updateContactSubmission(token, id, { status });
+      setSubmissions((prev) => prev.map((s) => (s._id === id ? updated : s)));
+    } catch (err) {
+      alert(err.message || "Failed to update this lead.");
+    }
+  };
 
   const load = async (adminToken) => {
     setLoading(true);
@@ -47,15 +80,20 @@ export default function AdminContacts() {
   const handleExport = async () => {
     const XLSX = await import("xlsx");
 
-    const rows = submissions.map((s) => ({
+    const rows = shown.map((s) => ({
       "Full Name": s.fullName,
       "Company Name": s.companyName || "",
       "Work Email": s.workEmail,
       "Phone Number": s.phoneNumber || "",
-      "Project Type": s.projectType || "",
-      Message: s.message,
+      "Needs Help With": s.projectType || "",
+      Message: s.message || "",
+      Source: sourceLabel(s),
+      Campaign: campaignLabel(s),
       Status: s.status || "new",
       "Submitted At": formatDate(s.createdAt),
+      "Contacted At": s.contactedAt ? formatDate(s.contactedAt) : "",
+      "Email To Businessops": s.notifiedAt ? "Sent" : s.notifyError ? "Not sent" : "",
+      Notes: s.notes || "",
     }));
 
     const worksheet = XLSX.utils.json_to_sheet(rows);
@@ -64,10 +102,15 @@ export default function AdminContacts() {
       { wch: 20 }, // Company Name
       { wch: 26 }, // Work Email
       { wch: 16 }, // Phone Number
-      { wch: 20 }, // Project Type
+      { wch: 28 }, // Needs Help With
       { wch: 50 }, // Message
+      { wch: 24 }, // Source
+      { wch: 24 }, // Campaign
       { wch: 10 }, // Status
       { wch: 20 }, // Submitted At
+      { wch: 20 }, // Contacted At
+      { wch: 12 }, // Email
+      { wch: 30 }, // Notes
     ];
 
     const workbook = XLSX.utils.book_new();
@@ -131,14 +174,19 @@ export default function AdminContacts() {
       <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
         <div>
           <h1 className="text-2xl md:text-3xl font-extrabold mb-1">Contact Leads</h1>
-          <p className="text-sm text-slate-600">{submissions.length} submission(s)</p>
+          <p className="text-sm text-slate-600">
+            {submissions.length} submission(s)
+            {overdueCount > 0 && (
+              <span className="ml-2 font-semibold text-red-700">· {overdueCount} not contacted after 24 hours</span>
+            )}
+          </p>
         </div>
         <div className="flex items-center gap-3">
           <motion.button
             onClick={handleExport}
-            disabled={submissions.length === 0}
-            whileHover={submissions.length === 0 ? {} : { scale: 1.05 }}
-            whileTap={submissions.length === 0 ? {} : { scale: 0.95 }}
+            disabled={shown.length === 0}
+            whileHover={shown.length === 0 ? {} : { scale: 1.05 }}
+            whileTap={shown.length === 0 ? {} : { scale: 0.95 }}
             className="inline-flex items-center gap-2 rounded-lg bg-brand px-4 py-2 text-sm font-semibold text-white hover:bg-brand-dark transition-colors disabled:opacity-50"
           >
             <Download size={16} /> Export to Excel
@@ -154,16 +202,40 @@ export default function AdminContacts() {
         </div>
       </div>
 
-      {submissions.length === 0 ? (
+      <div className="flex flex-wrap gap-2 mb-6">
+        {FILTERS.map((f) => (
+          <button
+            key={f.id}
+            onClick={() => setFilter(f.id)}
+            className={`rounded-full px-4 py-1.5 text-sm font-medium border transition-colors ${
+              filter === f.id ? "bg-navy text-white border-navy" : "border-slate-300 hover:border-brand"
+            }`}
+          >
+            {f.label}
+          </button>
+        ))}
+      </div>
+
+      {shown.length === 0 ? (
         <p className="text-slate-500 text-center py-16">No submissions yet.</p>
       ) : (
         <div className="space-y-4">
-          {submissions.map((s) => (
-            <div key={s._id} className="border border-slate-200 rounded-2xl p-6">
+          {shown.map((s) => (
+            <div key={s._id} className={`border rounded-2xl p-6 ${isOverdue(s) ? "border-red-300 bg-red-50/40" : "border-slate-200"}`}>
               <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                 <h3 className="font-bold text-lg">{s.fullName}</h3>
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3">
                   <span className="text-xs text-slate-500">{formatDate(s.createdAt)}</span>
+                  <select
+                    value={s.status || "new"}
+                    onChange={(e) => handleStatus(s._id, e.target.value)}
+                    aria-label="Lead status"
+                    className="rounded-lg border border-slate-300 px-2 py-1 text-xs font-medium"
+                  >
+                    <option value="new">New</option>
+                    <option value="contacted">Contacted</option>
+                    <option value="closed">Closed</option>
+                  </select>
                   <motion.button
                     onClick={() => handleDelete(s._id)}
                     disabled={deletingId === s._id}
@@ -196,9 +268,26 @@ export default function AdminContacts() {
                   </span>
                 )}
               </div>
-              <p className="text-sm text-slate-700 leading-relaxed border-t border-slate-100 pt-4">
-                {s.message}
-              </p>
+              <div className="flex flex-wrap gap-2 text-xs mb-4">
+                <span className="rounded-full bg-slate-100 px-3 py-0.5 text-slate-700">{sourceLabel(s)}</span>
+                {campaignLabel(s) && (
+                  <span className="rounded-full bg-slate-100 px-3 py-0.5 text-slate-700">Campaign: {campaignLabel(s)}</span>
+                )}
+                {isOverdue(s) && (
+                  <span className="rounded-full bg-red-100 px-3 py-0.5 font-semibold text-red-700">Over 24 hours, not contacted</span>
+                )}
+                {s.contactedAt && (
+                  <span className="rounded-full bg-green-100 px-3 py-0.5 text-green-800">Contacted {formatDate(s.contactedAt)}</span>
+                )}
+                {s.notifyError && !s.notifiedAt && (
+                  <span className="rounded-full bg-amber-100 px-3 py-0.5 text-amber-800">Email to businessops not sent</span>
+                )}
+              </div>
+              {s.message && (
+                <p className="text-sm text-slate-700 leading-relaxed border-t border-slate-100 pt-4 whitespace-pre-wrap">
+                  {s.message}
+                </p>
+              )}
             </div>
           ))}
         </div>

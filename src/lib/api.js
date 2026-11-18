@@ -32,3 +32,15 @@ export async function deleteContactSubmission(adminToken, id) {
   if (!res.ok) throw new Error(body.error || "Failed to delete submission");
   return body;
 }
+
+// Admin-only: sets a lead's status (new / contacted / closed) and/or notes.
+export async function updateContactSubmission(adminToken, id, changes) {
+  const res = await fetch(`${API_URL}/api/contact/${id}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json", "x-admin-token": adminToken },
+    body: JSON.stringify(changes),
+  });
+  const body = await res.json();
+  if (!res.ok) throw new Error(body.error || "Failed to update this lead");
+  return body;
+}
