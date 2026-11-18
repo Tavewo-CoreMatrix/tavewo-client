@@ -1,5 +1,11 @@
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
+// Wakes the API (Render's free plan sleeps after 15 minutes idle), so it is
+// ready by the time the visitor sends the form. Errors are ignored.
+export function wakeApi() {
+  fetch(`${API_URL}/api/health`).catch(() => {});
+}
+
 export async function submitContactForm(data) {
   const res = await fetch(`${API_URL}/api/contact`, {
     method: "POST",

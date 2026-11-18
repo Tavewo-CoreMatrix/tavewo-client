@@ -14,7 +14,7 @@ import {
   CreditCard,
 } from "lucide-react";
 import Reveal, { StaggerGroup, staggerItem } from "../components/Reveal";
-import { submitContactForm } from "../lib/api";
+import { submitContactForm, wakeApi } from "../lib/api";
 import { captureCampaign, loadMetaPixel, trackLead } from "../lib/campaign";
 
 // CoreMatrix ad landing page (Facebook/Instagram campaign, Nov 2026).
@@ -101,6 +101,7 @@ export default function CoreMatrixLanding() {
     const previous = document.title;
     document.title = "CoreMatrix | Software for Nigerian businesses";
     campaign.current = captureCampaign();
+    wakeApi();
     loadMetaPixel();
     return () => {
       document.title = previous;
@@ -307,7 +308,7 @@ export default function CoreMatrixLanding() {
                   disabled={status === "submitting"}
                   className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-brand px-6 py-3.5 font-semibold text-white hover:bg-brand-dark disabled:opacity-60"
                 >
-                  {status === "submitting" ? "Sending..." : "Send my enquiry"}
+                  {status === "submitting" ? "Sending, please wait..." : "Send my enquiry"}
                   {status !== "submitting" && <ArrowRight size={18} />}
                 </button>
 
