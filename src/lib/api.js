@@ -1,5 +1,11 @@
 const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
 
+// Wakes the API (Render's free plan sleeps after 15 minutes idle), so it is
+// ready by the time the visitor sends the form. Errors are ignored.
+export function wakeApi() {
+  fetch(`${API_URL}/api/health`).catch(() => {});
+}
+
 export async function submitContactForm(data) {
   const res = await fetch(`${API_URL}/api/contact`, {
     method: "POST",
@@ -30,5 +36,17 @@ export async function deleteContactSubmission(adminToken, id) {
   });
   const body = await res.json();
   if (!res.ok) throw new Error(body.error || "Failed to delete submission");
+  return body;
+}
+
+// Admin-only: sets a lead's status (new / contacted / closed) and/or notes.
+export async function updateContactSubmission(adminToken, id, changes) {
+  const res = await fetch(`${API_URL}/api/contact/${id}`, {
+    method: "PATCH",
+    headers: { "Content-Type": "application/json", "x-admin-token": adminToken },
+    body: JSON.stringify(changes),
+  });
+  const body = await res.json();
+  if (!res.ok) throw new Error(body.error || "Failed to update this lead");
   return body;
 }
