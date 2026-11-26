@@ -53,7 +53,14 @@ export default function RespondrLanding() {
 
   return (
     <main>
-      <HeroBanner eyebrow="respondRalert · by CoreMatrix" title="Help from the people who matter, fast" subtitle="A personal safety app for Nigeria. One tap sends your location to your trusted contacts, records what is happening, and keeps watch on risky trips.">
+      <HeroBanner
+        logo={
+          <span className="inline-flex rounded-2xl bg-white px-6 py-4 shadow-lg">
+            <img src="/images/respondralert-logo.webp" alt="respondRalert: Because emergencies can't wait" width="180" height="128" className="h-auto w-[150px] md:w-[180px]" />
+          </span>
+        }
+        eyebrow="by CoreMatrix, a division of TAVEWO Ventures Ltd"
+        title="Help from the people who matter, fast" subtitle="A personal safety app for Nigeria. One tap sends your location to your trusted contacts, records what is happening, and keeps watch on risky trips.">
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <PlayButton />
           <Link to="/respondralert/faq" className="inline-flex items-center rounded-xl px-6 py-3.5 font-semibold text-white ring-1 ring-white/40 hover:bg-white/10">
