@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-export default function HeroBanner({ eyebrow, title, subtitle, children }) {
+export default function HeroBanner({ eyebrow, title, subtitle, logo, children }) {
   return (
     <section className="bg-navy text-white text-center px-5 md:px-8 py-16 md:py-20">
       <motion.div
@@ -9,6 +9,7 @@ export default function HeroBanner({ eyebrow, title, subtitle, children }) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.9, ease: [0.30, 1, 0.44, 1] }}
       >
+        {logo && <div className="mb-6 flex justify-center">{logo}</div>}
         {eyebrow && (
           <p className="text-eyebrow font-medium mb-4 tracking-wide">{eyebrow}</p>
         )}
