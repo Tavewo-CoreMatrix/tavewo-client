@@ -56,7 +56,8 @@ const companyLinks = [
 
 const ecosystemLinks = [
   { label: "VERSCAR", to: "/products#verscar" },
-  { label: "respondRalert", to: "/products#respondralert" },
+  { label: "respondRalert", to: "/respondralert" },
+  { label: "respondRalert FAQ", to: "/respondralert/faq" },
   { label: "CorePrep", to: "/products#coreprep" },
   { label: "TaveLink", to: "/products#tavelink" },
   { label: "Technology", to: "/division#corematrix" },
