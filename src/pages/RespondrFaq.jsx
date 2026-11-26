@@ -96,7 +96,14 @@ export default function RespondrFaq() {
 
   return (
     <main>
-      <HeroBanner eyebrow="respondRalert" title="Questions and answers" subtitle="How the app works, how to set up your phone, and what happens when there is no network." />
+      <HeroBanner
+        logo={
+          <Link to="/respondralert" className="inline-flex items-center gap-3 rounded-2xl bg-white px-5 py-3 shadow-lg">
+            <img src="/images/respondralert-mark.webp" alt="" width="34" height="40" className="h-10 w-auto" />
+            <span className="text-xl font-extrabold text-ink">respond<span className="text-red-600">R</span>alert</span>
+          </Link>
+        }
+        title="Questions and answers" subtitle="How the app works, how to set up your phone, and what happens when there is no network." />
       <section className="px-5 py-12 md:px-8 md:py-16">
         <div className="mx-auto max-w-3xl">
           <nav aria-label="Sections" className="mb-10 flex flex-wrap gap-2">
