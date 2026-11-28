@@ -1,3 +1,4 @@
+import { SUPPORT, telHref } from "../lib/support";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AlarmClock, Archive, BellRing, EyeOff, HeartPulse, MapPin, Phone, ShieldCheck, Smartphone, Users } from "lucide-react";
@@ -144,6 +145,15 @@ export default function RespondrLanding() {
           <Link to="/respondr/delete-account" className="font-semibold text-brand underline underline-offset-4">Delete your account</Link>
           {" · "}
           <Link to="/contact" className="font-semibold text-brand underline underline-offset-4">Contact us</Link>
+        </p>
+        <p className="mx-auto mt-4 max-w-3xl text-center text-sm text-slate-500">
+          Support: <a href={`mailto:${SUPPORT.email}`} className="font-semibold text-brand underline underline-offset-4">{SUPPORT.email}</a>
+          {" · "}
+          <a href={telHref(SUPPORT.phones[0])} className="font-semibold text-brand underline underline-offset-4">{SUPPORT.phones[0]}</a>
+          {" · "}
+          {SUPPORT.hours}
+          <br />
+          respondRalert is a product of {SUPPORT.company} (RC {SUPPORT.rcNumber}), {SUPPORT.address}.
         </p>
       </section>
     </main>
