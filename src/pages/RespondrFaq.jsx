@@ -1,3 +1,4 @@
+import { SUPPORT, telHref } from "../lib/support";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import HeroBanner from "../components/HeroBanner";
@@ -81,6 +82,20 @@ const GROUPS = [
       ["Is my information safe?", <p>Your data is encrypted in transit and at rest, and only you can see your account. Read the <Link to="/respondr/privacy" className={link}>respondRalert Privacy Policy</Link>.</p>],
       ["How do I delete my account?", <p>In the app, go to Profile → Delete account, or follow the steps on <Link to="/respondr/delete-account" className={link}>Delete your account</Link>.</p>],
       ["Does respondRalert call the police or an ambulance?", "No. It alerts your trusted contacts and helps you find nearby services. It does not dispatch emergency services and cannot guarantee help will arrive. In immediate danger, call 112."],
+    ],
+  },
+  {
+    id: "support",
+    title: "Contact and support",
+    items: [
+      ["How do I get help with the app?", <>
+        <p>Email <a href={`mailto:${SUPPORT.email}`} className={link}>{SUPPORT.email}</a> or call{" "}
+          {SUPPORT.phones.map((phone, i) => (
+            <span key={phone}>{i > 0 && " or "}<a href={telHref(phone)} className={link}>{phone}</a></span>
+          ))}, {SUPPORT.hours}. In the app you can also use Profile → Report a Problem.</p>
+        <p className="mt-2">Support cannot respond to emergencies. In immediate danger, call 112.</p>
+      </>],
+      ["Who runs respondRalert?", `${SUPPORT.company} (RC ${SUPPORT.rcNumber}), through its technology division, CoreMatrix. ${SUPPORT.address}.`],
     ],
   },
 ];
